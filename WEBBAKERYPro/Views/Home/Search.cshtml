@@ -1,0 +1,54 @@
+﻿<style>
+    .customsearch {
+        height:50px;
+        max-width:500px;
+        width:300px;
+        background: #f4f4f4;
+        border-radius:7px;
+    }
+</style>
+<div class="row">
+    <div class="col-sm-2">
+        <a href="~/Home/Index">
+            <img src="~/Images/logo.jpg" alt="img logo" width="200px" height="100px" />
+        </a>
+    </div>
+    <div class="col-sm-4" style="display: flex; justify-content: center; align-items: center;">
+        @using (Html.BeginForm("Index","Home",FormMethod.Post))
+        {
+            @Html.TextBox("SearchString","", new  {@class= "customsearch"});
+            <input type="submit" class="customsearch" value="Search" name="Search" />
+        }
+    </div>
+    <div class="col-sm-6">
+        <ul class="horizontal_navbar" style="justify-content:center;align-items:center;height:100px;">
+            <li class="WrapperEachCate">
+                <a class="nav-link" href="~/Home/About">GIỚI THIỆU</a>
+            </li>
+            <li class="WrapperEachCate">
+                <a class="nav-link" href="#">SẢN PHẨM</a>
+            </li>
+            <li class="WrapperEachCate">
+                <a class="nav-link" href="~/Home/Contact">LIÊN HỆ</a>
+            </li>
+            <li class="WrapperEachCate">
+                <a class="nav-link" href="~/ShoppingCart/Index"><i class="fa-solid fa-cart-shopping fa-bounce"></i> GIỎ HÀNG</a>
+            </li>
+            <li class="WrapperEachCate">
+                <div class="nav-link" href="#" style="display:flex;justify-content:center;align-items:center;">
+                    <i class="fa-solid fa-user"></i>
+                    <div style="margin-left:10px;">
+                        <span>
+                            Đăng ký
+                        </span>
+                        <br />
+                        <span onclick="Login()">
+                            Đăng nhập
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+

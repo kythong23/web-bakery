@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/Homepage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script>
+        function closeform() {
+            document.getElementById("loginform").style.opacity = 0;
+        }
+        function Login() {
+             var xhr = new XMLHttpRequest();
+                xhr.open('GET', '@Url.Action("Login", "Login")', true);
+                xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("loginform").innerHTML = xhr.responseText;
+                    // Đặt opacity thành 1
+                    document.getElementById("loginform").style.opacity = 1;
+        }
+    };
+    xhr.send();
+        }
+    </script>
+    <style>
+        #loginform {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Grey with black text -->
+        <nav class="menunavbar">
+           @Html.Partial("Search","Home")
+        </nav>
+        <div id="loginform">
+        </div>
+        @RenderBody()
+    </div>
+    <buton class="ButtonChat">
+        <i class="fa-brands fa-rocketchat fa-2xl"></i>
+    </buton>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - webbakery - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

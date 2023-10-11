@@ -1,0 +1,12 @@
+﻿<link href="~/Content/Homepage.css" rel="stylesheet" />
+<div class="WrapperCategories">
+    <ul class="horizontal_navbar">
+        @foreach (var LOAISANPHAM in Model)
+        {
+            <a href="@Url.Action("SPTheoLoai","Home",new {id = LOAISANPHAM.MaLoai})">
+               @LOAISANPHAM.TenLoai
+               </a>
+        }
+    </ul>
+</div>
+

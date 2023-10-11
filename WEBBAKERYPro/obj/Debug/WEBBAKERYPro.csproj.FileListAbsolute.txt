@@ -1,0 +1,249 @@
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.dll.config
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.pdb
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.exe
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.rsp
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.exe
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.rsp
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.AppContext.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Console.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.Compression.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Net.Http.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Net.Sockets.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.ValueTuple.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XPath.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.exe
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.rsp
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\VBCSCompiler.exe
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\Antlr3.Runtime.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\Newtonsoft.Json.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Helpers.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Mvc.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Optimization.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Razor.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Deployment.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Razor.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\WebGrease.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Helpers.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Mvc.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Optimization.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Razor.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Deployment.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Razor.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\Newtonsoft.Json.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\Antlr3.Runtime.pdb
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CopyComplete
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.pdb
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.SqlServer.dll
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.xml
+C:\Users\acer\Desktop\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.SqlServer.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.dll.config
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.pdb
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.exe
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.rsp
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.exe
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.rsp
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.AppContext.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Console.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.Compression.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Net.Http.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Net.Sockets.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.ValueTuple.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XPath.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.exe
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.rsp
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\VBCSCompiler.exe
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\Antlr3.Runtime.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.SqlServer.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\Newtonsoft.Json.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Helpers.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Mvc.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Optimization.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Razor.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Deployment.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Razor.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\WebGrease.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.SqlServer.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Helpers.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Mvc.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Optimization.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Razor.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Deployment.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Razor.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\Newtonsoft.Json.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\Antlr3.Runtime.pdb
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CopyComplete
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.dll
+C:\Users\acer\Desktop\WEBBAKERYPro - DT\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.pdb
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.dll.config
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\WEBBAKERYPro.pdb
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.exe
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.exe.config
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csc.rsp
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.exe
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.exe.config
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\csi.rsp
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Managed.Core.targets
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.AppContext.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Collections.Immutable.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Console.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Globalization.Calendars.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.Compression.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.FileSystem.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Net.Http.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Net.Sockets.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Reflection.Metadata.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.ValueTuple.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XmlDocument.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XPath.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.exe
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.exe.config
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\vbc.rsp
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\VBCSCompiler.exe
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\roslyn\VBCSCompiler.exe.config
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\Antlr3.Runtime.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.SqlServer.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.Web.Infrastructure.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\Newtonsoft.Json.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Helpers.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Mvc.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Optimization.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Razor.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Deployment.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Razor.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\WebGrease.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\EntityFramework.SqlServer.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Helpers.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Mvc.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Optimization.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.Razor.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Deployment.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\System.Web.WebPages.Razor.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\Newtonsoft.Json.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\Antlr3.Runtime.pdb
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.AssemblyReference.cache
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CoreCompileInputs.cache
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CopyComplete
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.dll
+D:\git\web-bakery-master\WEBBAKERYPro\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.pdb

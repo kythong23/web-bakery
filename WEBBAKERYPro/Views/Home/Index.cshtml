@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="LoaiSP">
+    @Html.Action("LayLoaiSanPham", "Home")
+</div>
+<img style="width:100%;" src="~/Images/Banner.png" />
+<div style="color:red; margin:15px 0;font-size:30px;font-weight:bold;">
+    SẢN PHẨM BÁN CHẠY NHẤT
+</div>
+<div class="container">
+    <div class="row" style="flex-wrap:wrap;justify-content:flex-start;">
+        @foreach (var SANPHAM in Model)
+        {
+            <div class="card col-3" style="margin-top:20px;">
+                <div class="WrapperImgPro">
+                    <a href="@Url.Action("Details","Home", new {id = SANPHAM.MaSP})">
+                        <img class="card-img-top book-picture" src="~/Images/@SANPHAM.HinhSP" alt="Cardimage">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <a href="@Url.Action("Details","Home", new {id = SANPHAM.MaSP})">
+                        <h5 class="card-title">@SANPHAM.TenSP</h5>
+                    </a>
+                    <p class="card-text">
+                        @SANPHAM.Gia đồng
+                        <span class="ProReview">@SANPHAM.ReviewSP Reviews</span>
+                    </p>
+                    <p>
+                        <span class="RatePro">
+                            @SANPHAM.RateSP <i class="fa-solid fa-star"></i>
+                        </span>
+                        <a href="#" class="btn btn-primary" style="margin-left:10px;">Thêm vào giỏ hàng</a>
+                    </p>
+                </div>
+                <a href="~/Views/Home/Index.cshtml">~/Views/Home/Index.cshtml</a>
+            </div>
+        }
+    </div>
+</div>
+
+
+

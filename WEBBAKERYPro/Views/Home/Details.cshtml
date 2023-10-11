@@ -1,0 +1,111 @@
+﻿@using WEBBAKERYPro.Models;
+@model SANPHAM
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<style>
+    .prod-seperator {
+        width: 100%;
+        background: url(https://media.bakingo.com/bakingo-ssr/static/media/dasehdLine.18422b3e.svg);
+        height: 1px;
+        margin-top: 10px;
+    }
+
+    .input-icon i {
+        position: absolute;
+        padding: 10px;
+        margin-top: 8px;
+        margin-left: 15px;
+    }
+
+    .input-icon h4 {
+        margin: 15px;
+    }
+
+    .wrapperbutton {
+        margin: 30px 10px 10px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .wrapperbutton button {
+            border-radius: 5px;
+            width: 250px;
+            height: 50px;
+            margin-left: 10px;
+            border: 1px solid #ff5f5d;
+        }
+
+    .inputform {
+        max-width: 700px;
+        width: 520px;
+        border-radius: 10px;
+        height: 50px;
+        padding-left: 30px;
+        margin-left: 15px;
+    }
+
+    .wrapperprice {
+        font-weight: bold;
+        font-size: 25px;
+        margin: 10px;
+    }
+
+    #wrapperdescribe {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+</style>
+<script>
+    function showhidden() {
+        var mota = document.getElementById("wrapperdescribe");
+        var button = document.getElementById("button");
+        mota.style.display = "block";
+        button.style.display = "none";
+    }
+</script>
+<h1 style="margin:20px;">Thong tin chi tiet san pham</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-7"><img src="~/Images/@Model.HinhSP" alt="Alternate Text" width="400px" height="350px" /></div>
+        <div class=" col-5">
+            <h2>
+                @Model.TenSP
+            </h2>
+            <div>
+                <p>
+                    <span>
+                        @Model.RateSP <i class="fa-solid fa-star" style="color: #e2a132;"></i>
+                    </span>
+                    <span class="ProReview" style="color: #468fce;">(@Model.ReviewSP Reviews)</span>
+                </p>
+                <div class="prod-seperator"></div>
+                <p>
+                    <span><i class="fa-solid fa-coins" style="font-size: 25px;"></i></span>
+                    <span class="wrapperprice">@Model.Gia vnđ</span>
+                </p>
+                <div class="input-icon">
+                    <h4>Lời nhắn</h4>
+                    <i class="fa-regular fa-message"></i>
+                    <input type="text" name="name" value="" placeholder="Lời nhắn của bạn" class="inputform" />
+                    <h4>Địa chỉ giao hàng</h4>
+                    <i class="fa-sharp fa-solid fa-location-dot"></i>
+                    <input type="text" name="name" value="" placeholder="Địa chỉ" class="inputform" />
+                </div>
+                <div class="wrapperbutton">
+                    <button style="background: white; color: #ff5f5d;font-weight:bold;">Thêm vào giỏ hàng</button>
+                    <button style="background: #ff5f5d; color: white; font-weight: bold;">Thanh toán</button>
+                </div>
+                <div class="prod-seperator"></div>
+                <h2>Mô tả sản phẩm</h2>
+                <div id="wrapperdescribe">@Model.MotaSP</div>
+                <button id="button" onclick="showhidden()">READ MORE</button>
+            </div>
+        </div>
+    </div>
+</div>

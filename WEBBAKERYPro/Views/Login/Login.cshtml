@@ -1,0 +1,51 @@
+﻿<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+<style>
+    .backgroundlogin {
+        background-color: rgba(0,0,0,.5) !important;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+
+    .layoutlogin {
+        max-width: 740px;
+        transform: none !important;
+        inset: 30% auto auto 30% !important;
+        margin: 50px auto 50px !important;
+        outline: none;
+        background: white;
+    }
+
+    .col-6 div {
+        margin-top: 20px;
+    }
+
+    .col-6 input[type="text"], .col-7 input[type="password"] {
+        margin-top: 3px;
+    }
+</style>
+
+<div class="backgroundlogin">
+    <div class="layoutlogin">
+        <div class="row">
+            <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-5" />
+            <div class="col-6">
+                <h2>Xin chào!</h2>
+                <div>Tên đăng nhập</div>
+                <input type="text" name="name" value="" placeholder="Tên đăng nhập" />
+                <div>Mật khẩu</div>
+                <input type="password" name="name" value="" placeholder="Mật khẩu" />
+                <div>
+                    <button>Đăng nhập</button>
+                </div>
+            </div>
+            <div class="col-1">
+                <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
+            </div>
+        </div>
+    </div>
+</div>

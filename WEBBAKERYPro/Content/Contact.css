@@ -1,0 +1,19 @@
+﻿.contact .row {
+    height:500px;
+}
+.contact input {
+    border-style: none;
+    border-bottom: 1px solid black;
+    width:100%;
+    padding:5px;
+}
+    .contact input:focus {
+       outline:none;
+    }
+.inputreply {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    flex-direction:column;
+}
