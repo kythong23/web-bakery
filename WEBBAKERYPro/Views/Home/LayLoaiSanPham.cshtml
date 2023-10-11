@@ -3,7 +3,7 @@
     <ul class="horizontal_navbar">
         @foreach (var LOAISANPHAM in Model)
         {
-            <a href="@Url.Action("SPTheoLoai","Home",new {id = LOAISANPHAM.MaLoai})">
+            <a href="@Url.Action("SPTheoLoai","Home",new {id = LOAISANPHAM.MaLoai})" class="WrapperEachCate"> 
                @LOAISANPHAM.TenLoai
                </a>
         }
