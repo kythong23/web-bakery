@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="~/Content/Homepage.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <script>
+        function signup() {
+            var layoutlogin = document.getElementById("layoutlogin");
+            var layoutsignup = document.getElementById("layoutsignup");
+            var signupButton = document.getElementById("signup");
+            layoutlogin.style.left = '-900px';
+            layoutsignup.style.left = '0px';
+        }
         function closeform() {
             document.getElementById("loginform").style.opacity = 0;
         }
@@ -21,9 +28,9 @@
                     document.getElementById("loginform").innerHTML = xhr.responseText;
                     // Đặt opacity thành 1
                     document.getElementById("loginform").style.opacity = 1;
-        }
-    };
-    xhr.send();
+                }
+        };
+            xhr.send();
         }
     </script>
     <style>
@@ -36,7 +43,7 @@
     <div class="container-fluid">
         <!-- Grey with black text -->
         <nav class="menunavbar">
-           @Html.Partial("Search","Home")
+            @Html.Partial("Search", "Home")
         </nav>
         <div id="loginform">
         </div>

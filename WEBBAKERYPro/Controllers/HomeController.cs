@@ -11,7 +11,6 @@ namespace WEBBAKERYPro.Controllers
 {
     public class HomeController : Controller
     {
-        public string keysearch;
         public ActionResult Search()
         {
             return PartialView();

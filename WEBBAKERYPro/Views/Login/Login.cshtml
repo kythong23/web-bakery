@@ -11,11 +11,18 @@
         z-index: 999;
     }
 
-    .layoutlogin {
-        max-width: 740px;
-        transform: none !important;
-        inset: 30% auto auto 30% !important;
-        margin: 50px auto 50px !important;
+        .backgroundlogin div {
+            transition: 0.5s;
+        }
+
+
+    #layoutsignup {
+        max-width: 700px;
+        width: 700px;
+        height: fit-content;
+        position: absolute;
+        top:0;
+        left: -900px;
         outline: none;
         background: white;
     }
@@ -27,25 +34,72 @@
     .col-6 input[type="text"], .col-7 input[type="password"] {
         margin-top: 3px;
     }
+    #wrapperlayout {
+        max-width: 700px;
+        width: 700px;
+        height: 400px;
+        position: absolute;
+        left: 450px;
+        top: 225px;
+        outline: none;
+        background: white;
+        overflow:hidden;
+    }
 </style>
-
+<script>
+    function signup() {
+        var layoutlogin = document.getElementById("layoutlogin");
+        var layoutsignup = document.getElementById("layoutsignup");
+        var signupButton = document.getElementById("signup");
+        layoutlogin.style.left = '-900px';
+        layoutsignup.style.left = '0px';
+    }
+</script>
 <div class="backgroundlogin">
-    <div class="layoutlogin">
-        <div class="row">
-            <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-5" />
-            <div class="col-6">
-                <h2>Xin chào!</h2>
-                <div>Tên đăng nhập</div>
-                <input type="text" name="name" value="" placeholder="Tên đăng nhập" />
-                <div>Mật khẩu</div>
-                <input type="password" name="name" value="" placeholder="Mật khẩu" />
-                <div>
-                    <button>Đăng nhập</button>
+    <div id="wrapperlayout">
+        <div id="layoutlogin">
+            <div class="row">
+                <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-5" height="400px" />
+                <div class="col-6">
+                    <h2>Xin chào!</h2>
+                    <div>Tên đăng nhập</div>
+                    <input type="text" name="name" value="" placeholder="Tên đăng nhập" />
+                    <div>Mật khẩu</div>
+                    <input type="password" name="name" value="" placeholder="Mật khẩu" />
+                    <div>
+                        <button id="">Đăng nhập</button>
+                        <button onclick="signup()">Dang ky</button>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
                 </div>
             </div>
-            <div class="col-1">
-                <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
+        </div>
+        <div id="layoutsignup">
+            <div class="row">
+                <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-5" height="400px" />
+                <div class="col-6">
+                    <h2>Xin chào!</h2>
+                    <h2>Dang ky tai khoan</h2>
+                    <div>Tên đăng nhập</div>
+                    <input type="text" name="name" value="" placeholder="Tên đăng nhập" />
+                    <div>Mật khẩu</div>
+                    <input type="password" name="name" value="" placeholder="Mật khẩu" />
+                    <div>
+                        <div>Nhap lai mat khau</div>
+                        <input type="password" name="name" value="" placeholder="Mật khẩu" />
+                        <div>
+                            <button>Đăng nhập</button>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-1">
+                        <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
+                    </div>
             </div>
         </div>
     </div>
-</div>
+</div>  
