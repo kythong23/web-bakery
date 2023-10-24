@@ -3,6 +3,67 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    th {
+        text-align: center;
+        border-bottom: 1px solid black;
+        background: #f8f5f0;
+        padding: 8px 60px 8px 60px;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    tr {
+    }
+
+    img {
+        border-radius: 5px;
+    }
+</style>
 <hr />
-<h2>Chưa có sản phẩm nào trong giỏ hàng</h2>
+<h2>Thông tin giỏ hàng</h2>
+<div class="row">
+    <div class="col-8">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sanpham in Model)
+                {
+                    <tr>
+                        <td id="sanpham">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
+                                    </td>
+                                    <td>
+                                        <h5>@sanpham.TenBanh</h5>
+                                        <div>@sanpham.MaBanh</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
+                        <td>@sanpham.SoLuong</td>
+                        <td>@sanpham.ThanhTien()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4">
+        <h3 style=" background: #f8f5f0;max-width:300px;padding:8px;">Tog ket don hang</h3>
+        <div colspan="5">Tong so luong: @ViewBag.TongSL</div>
+        <div colspan="1">Tong tien: @ViewBag.TongTien</div>
+    </div>
+</div>
 

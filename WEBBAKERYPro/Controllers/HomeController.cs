@@ -22,16 +22,8 @@ namespace WEBBAKERYPro.Controllers
         }
         public ActionResult Index()
         {
-            if (!keysearch.IsEmpty())
-            {
-                var sp = database.SANPHAMs.Include(s => s.MaSP).Where(x => x.TenSP.Contains(keysearch));
-                return View(sp.ToList());
-            }
-            else
-            {
                 var dsSanPham = database.SANPHAMs.ToList();
                 return View(dsSanPham);
-            }
         }
         [HttpPost]
         public ActionResult Index(string SearchString)

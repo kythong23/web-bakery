@@ -98,7 +98,9 @@
                     <input type="text" name="name" value="" placeholder="Địa chỉ" class="inputform" />
                 </div>
                 <div class="wrapperbutton">
-                    <button style="background: white; color: #ff5f5d;font-weight:bold;">Thêm vào giỏ hàng</button>
+                    <a href="@Url.Action("ThemSanPhamVaoGio","ShoppingCart", new {MaSP = Model.MaSP})">
+                        <button style="background: white; color: #ff5f5d;font-weight:bold;">Thêm vào giỏ hàng</button>
+                    </a>
                     <button style="background: #ff5f5d; color: white; font-weight: bold;">Thanh toán</button>
                 </div>
                 <div class="prod-seperator"></div>
