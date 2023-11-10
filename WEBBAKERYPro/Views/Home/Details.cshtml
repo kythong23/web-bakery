@@ -39,6 +39,11 @@
             border: 1px solid #ff5f5d;
         }
 
+            .wrapperbutton button:hover {
+                transform: scale(1.05);
+                transition: ease 0.5s;
+            }
+
     .inputform {
         max-width: 700px;
         width: 520px;
@@ -60,6 +65,19 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
     }
+
+    #button {
+        border-radius: 3px;
+        background: white;
+    }
+
+    .smallimg {
+        margin-bottom: 10px;
+    }
+
+        .smallimg img {
+            border-radius: 5px;
+        }
 </style>
 <script>
     function showhidden() {
@@ -69,10 +87,27 @@
         button.style.display = "none";
     }
 </script>
+@{
+    string img = System.IO.Path.GetFileNameWithoutExtension(Model.HinhSP);
+}
 <h1 style="margin:20px;">Thông tin chi tiết sản phẩm</h1>
 <div class="container">
     <div class="row">
-        <div class="col-7"><img src="~/Images/@Model.HinhSP" alt="Alternate Text" width="400px" height="350px" /></div>
+        <div class="col-1">
+            <div class="smallimg">
+                <img src="~/Images/imgdetails/@img-a.jpg" alt="Alternate Text" />
+            </div>
+            <div class="smallimg">
+                <img src="~/Images/imgdetails/@img-b.jpg" alt="Alternate Text" />
+            </div>
+            <div class="smallimg">
+                <img src="~/Images/imgdetails/@img-c.jpg" alt="Alternate Text" />
+            </div>
+            <div class="smallimg">
+                <img src="~/Images/imgdetails/@img-d.jpg" alt="Alternate Text" />
+            </div>
+        </div>
+        <div class="col-6"><img src="~/Images/@Model.HinhSP" alt="Alternate Text" width="490px" height="430px;" /></div>
         <div class=" col-5">
             <h2>
                 @Model.TenSP

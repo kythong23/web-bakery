@@ -25,7 +25,7 @@
 <hr />
 <h2>Thông tin giỏ hàng</h2>
 <div class="row">
-    <div class="col-8">
+    <div class="col-9">
         <table>
             <thead>
                 <tr>
@@ -43,7 +43,9 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
+                                        <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})">
+                                            <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
+                                        </a>
                                     </td>
                                     <td>
                                         <h5>@sanpham.TenBanh</h5>
@@ -52,18 +54,27 @@
                                 </tr>
                             </table>
                         </td>
-                        <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
-                        <td>@sanpham.SoLuong</td>
-                        <td>@sanpham.ThanhTien()</td>
+                        @using (Html.BeginForm("CapNhatMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }))
+                        {
+                            <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
+                            <td>
+                                <input type="number" min="1" value="@sanpham.SoLuong" name="SoLuong" />
+                            </td>
+                            <td>@sanpham.ThanhTien()</td>
+                            <td>
+                                <button type="submit" class="btn btn-outline-primary">Cập nhật</button>
+                            </td>
+                        }
+                        <td> @Html.ActionLink("Xóa hàng", "XoaMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }, new { @class = "btn btn-danger" })</td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-    <div class="col-4">
-        <h3 style=" background: #f8f5f0;max-width:300px;padding:8px;">Tog ket don hang</h3>
-        <div colspan="5">Tong so luong: @ViewBag.TongSL</div>
-        <div colspan="1">Tong tien: @ViewBag.TongTien</div>
+    <div class="col-3">
+        <h3 style=" background: #f8f5f0;max-width:300px;padding:8px;">Tổng kết đơn hàng</h3>
+        <div colspan="5">Tổng số lượng: @ViewBag.TongSL</div>
+        <div colspan="1">Tổng tiền: @ViewBag.TongTien</div>
     </div>
 </div>
 

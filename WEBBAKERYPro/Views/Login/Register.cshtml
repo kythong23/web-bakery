@@ -1,0 +1,90 @@
+﻿<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+<style>
+    .backgroundlogin {
+        background-color: rgba(0,0,0,.5) !important;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+
+        .backgroundlogin div {
+            transition: 0.5s;
+        }
+
+
+
+    .col-6 div {
+        margin-top: 20px;
+    }
+
+    .col-6 input[type="text"], .col-7 input[type="password"] {
+        margin-top: 3px;
+    }
+
+    #wrapperlayout {
+        max-width: 700px;
+        width: 700px;
+        height: 500px;
+        position: absolute;
+        left: 450px;
+        top: 225px;
+        outline: none;
+        background: white;
+        overflow: hidden;
+    }
+</style>
+<script>
+    function signup() {
+        var layoutlogin = document.getElementById("layoutlogin");
+        var layoutsignup = document.getElementById("layoutsignup");
+        var signupButton = document.getElementById("signup");
+        layoutlogin.style.left = '-900px';
+        layoutsignup.style.left = '0px';
+    }
+</script>
+<div class="backgroundlogin">
+    <div id="wrapperlayout">
+        <div id="layoutsignup">
+            <div class="row">
+                <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-5" height="400px" />
+                <div class="col-6">
+                    @using (Html.BeginForm("Register", "Login"))
+                    {
+                        @Html.ValidationSummary(true)
+                        <h2>Xin chào!</h2>
+                        <h2>Đăng ký tài khoản</h2>
+                        <div>Họ Tên</div>
+                        <div class="name">
+                            @Html.TextBox("HoTen", null, new { @id = "hoten", required = "required" })
+                        </div>
+                        <div>Tên đăng nhập</div>
+                        <div class="username">
+                            @Html.TextBox("Email", null, new { @id = "username", required = "required" })
+
+                        </div>
+                        <div>Mật khẩu</div>
+                        <div class="password">
+                            @Html.Password("MatKhau", null, new { @id = "password", required = "required" })
+                        </div>
+                        <div>
+
+                            <div>
+                                <button type="submit">Đăng ký</button>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

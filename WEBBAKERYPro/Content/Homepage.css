@@ -34,7 +34,6 @@
     padding: 10px;
     margin-right: 20px;
     height: 400px;
-    width:290px;
 }
 .row {
     display: flex;
@@ -47,7 +46,7 @@
     top: 0;
     z-index: 100;
     background: white;
-    padding: 10px 10px 0px 10px;
+    padding: 10px 0px 0px 10px;
     box-shadow: 0 3px 5px 0 hsla(0,0%,52.5%,.2) !important;
 }
     .menunavbar a {
@@ -86,4 +85,15 @@
 .card-body a {
     color:black;
     text-decoration: none;
+}
+.WrapperFooter {
+    margin-top:20px;
+    background: #fff8ef;
+    border-top: 2px solid #ffecd4;
+    border-bottom: 2px solid #ffecd4;
+    height: 150px;
+    max-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

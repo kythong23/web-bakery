@@ -11,8 +11,7 @@ namespace WEBBAKERYPro.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class KHACHHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +20,8 @@ namespace WEBBAKERYPro.Models
             this.DONHANGs = new HashSet<DONHANG>();
         }
     
-        public string MaKH { get; set; }
+        public int MaKH { get; set; }
         public string HoTen { get; set; }
-        public string DiachiKH { get; set; }
-        public string GioiTinh { get; set; }
-        public int SDT { get; set; }
         public string Email { get; set; }
         public string MatKhau { get; set; }
     

@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dbbee6857fdd4d66bf73aca4933eba5b" Name="Diagram1">
+      <Diagram DiagramId="4d69e89af071414793843accf6fd184b" Name="Diagram1">
         <EntityTypeShape EntityType="bakeryModel.CHITIETDONHANG" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.DONHANG" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="bakeryModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bakeryModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.SANPHAM" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="bakeryModel.FK__CHITIETDON__MaDH__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="bakeryModel.FK__CHITIETDON__MaSP__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="bakeryModel.FK__DONHANG__MaKH__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="bakeryModel.FK__SANPHAM__MaLoai__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="bakeryModel.FK__CHITIETDON__MaDH__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="bakeryModel.FK__CHITIETDON__MaSP__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="bakeryModel.FK__DONHANG__MaKH__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="bakeryModel.FK__SANPHAM__MaLoai__29572725" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

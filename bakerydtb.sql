@@ -9,13 +9,10 @@ use bakery
 go
 
 create table KHACHHANG (
-	MaKH char (4) NOT NULL,
+	MaKH int identity(1,1),
 	HoTen nvarchar (100) NOT NULL,
-	DiachiKH nvarchar (100) NOT NULL,
-	GioiTinh nvarchar(10) NOT NULL,
-	SDT int NOT NULL,
-	Email nvarchar (100) NOT NULL,
-	MatKhau nvarchar (100) NOT NULL,
+	Email varchar (100) unique,
+	MatKhau varchar (100) NOT NULL,
 	PRIMARY KEY (MaKH)
 )
 
@@ -40,7 +37,7 @@ create table DONHANG (
 	NgayDat date NOT NULL,
 	DiaChiNhanHang nvarchar(100) NOT NULL,
 	HTThanhToan Bit Default 0,
-	MaKH char(4) NOT NULL,
+	MaKH int NOT NULL,
 	PRIMARY KEY (MADH),
 	FOREIGN KEY (MaKH) REFERENCES KHACHHANG (MaKH)
 )
@@ -82,7 +79,35 @@ VALUES
 		('SP04','Kit Kat Chocolate Pull Me Up Cake','2023-09-26', 1500000,'product4.jpg','L001',4.9,1500,N'Một chiếc bánh sô cô la kitkat kéo tôi lên, được trang trí bằng
 		một thanh sô cô la Kitkat ở trên cùng của chiếc bánh. Món ăn ngọt ngào và sô cô la này chắc chắn sẽ kéo bạn lên trong niềm hạnh phúc ngọt ngào. 
 		Một món ăn ngon hoặc một miếng cắn nhanh, chiếc bánh này sẽ khiến bạn quay trở lại để ăn thêm.'),
-		('SP05','Enchanting Pink Rose Cake','2023-09-26', 749000,'product5.jpg','L002',3.9,400,N'Một chiếc bánh hoa hồng cuốn hút');
+		('SP05','Enchanting Pink Rose Cake','2023-09-26', 749000,'product5.jpg','L002',3.9,400,N'Một chiếc bánh hoa hồng cuốn hút'),
+		('SP06', 'Fudgy Walnut Choco Brownie', '2023-09-26', 109999, 'product6.jpg', 'L003',4.5,800,N'Món bánh hạnh nhân óc chó thơm ngon đậm đà và thơm ngon này rất phù hợp 
+		để thỏa mãn cơn thèm của một người hoặc dùng làm quà tặng. Là món ăn kèm hoàn hảo cho trà, cà phê và các đồ uống nóng/lạnh khác, bộ bánh hạnh nhân óc chó cổ điển
+		này chắc chắn sẽ khiến người ta chảy nước miếng với hương vị đậm đà, kết cấu và sức hấp dẫn tuyệt vời.'),
+		('SP07','Delicious Happy Birthday Brownie','2023-09-26', 299999,'product7.jpg','L003',4.2,1230,N'Những chiếc bánh hạnh nhân sô cô la chúc mừng sinh nhật này là một 
+		cách tuyệt vời để thêm vào như một món ngọt. Được cả trẻ em và người lớn yêu thích, loại bánh hạnh nhân sô cô la đậm đà này kết hợp hương vị tinh tế của sô cô la 
+		và các loại hạt. Với dòng chữ Chúc mừng sinh nhật trên đó, những chiếc bánh hạnh nhân này sẽ là món quà nhỏ hoàn hảo.'),
+		('SP08','Yummy And Adorable Cocomelon Cake','2023-09-26', 509999,'product8.jpg','L001',4.9,1500,N'Thỏa mãn cơn thèm ngọt cùng với việc làm hài lòng đôi mắt của những
+		đứa trẻ đáng yêu của bạn. Hãy mang về nhà chiếc bánh Cocomelon thơm ngon và dễ thương này và khiến họ ngạc nhiên đến tận xương tủy. Làm cho lễ kỷ niệm thêm vui vẻ với
+		chiếc bánh dễ thương nhất trong thị trấn này. Hãy đặt hàng ngay món ngon này nhé!'),
+		('SP09', 'Happy First Birthday Cake', '2023-09-26', 500000, 'product9.jpg', 'L003',4.5,800,N'Bánh Kem Tròn Chúc Mừng Sinh Nhật Màu Hồng'),
+		('SP10','Free Fire Birthday Cake','2023-09-26', 2000000,'product10.jpg','L003',4.2,1230,N'Bánh chủ đề sinh nhật Free Fire Fondant'),
+		('SP11','Red Velvet Single Jar Cake','2023-09-26', 1500000,'product11.jpg','L001',4.9,1500,N'Không gì có thể sánh bằng sự ngon lành của một chiếc bánh hũ nhung đỏ thơm
+		ngon và khi được dùng làm một chiếc bánh hũ, chắc chắn nó sẽ lan tỏa hạnh phúc và những cảm xúc tốt đẹp khác đến những người thân yêu của bạn. Vì vậy, những gì chờ đợi? 
+		Dù vậy, bất kỳ dịp đặc biệt nào cũng hãy biến nó thành một dịp tuyệt vời nhất có thể bằng cách tổ chức nó trên một chiếc bánh hũ béo ngậy, mịn như nhung, như thế này.'),
+		('SP12', 'Choco-Chips And Fruit Jar Cake Combo', '2023-09-26', 500000, 'product12.jpg', 'L003',4.5,800,N'Người đặc biệt của bạn có phải là người yêu thích món tráng 
+		miệng thực sự không? Nếu đúng như vậy, đã đến lúc thưởng thức cho họ món kết hợp siêu xa hoa này gồm bánh choco-chip tan chảy và giòn cùng với hương vị của bánh trái cây
+		tươi. Họ sẽ không thốt nên lời khi khen ngợi chiếc bánh này.'),
+		('SP13','Heavenly Red Velvet Cupcake','2023-09-26', 2000000,'product13.jpg','L003',4.2,1230,N'Bánh cupcake nhung đỏ không trứng mềm phủ lớp kem phủ trắng mịn và rắc nhung đỏ.'),
+		('SP14','Moist and Fluffy Marble Cake','2023-09-26', 1500000,'product14.jpg','L001',4.9,1500,N'Với hương vị vani và sô cô la mềm mại, chiếc bánh đá cẩm thạch ẩm, mềm và mịn 
+		này sẽ làm hài lòng vị giác của bạn. Đó là một loại bánh trà tuyệt vời có thể dùng như một món ăn nhẹ hoàn hảo với trà hoặc cà phê. Nó có thể được mọi lứa tuổi thưởng thức
+		và là một món quà hoàn hảo cho bất kỳ dịp nào.'),
+		('SP15', 'Three Tier Animal Kingdom Cake', '2023-09-26', 678666, 'product15.jpg', 'L003',4.5,800,N'Hãy thỏa mãn và khơi dậy sự tò mò của bạn với chiếc bánh tầng có chủ đề động
+		vật tuyệt đẹp của chúng tôi. Kiệt tác ba tầng này được trang trí bằng kẹo cao su, voi, sư tử, hổ và ngựa vằn, tạo nên khung cảnh động vật hoang dã quyến rũ. Chiếc bánh còn có 
+		thiết kế hình chiếc lá, vô cùng phù hợp với khung cảnh rừng rậm! Hoàn hảo cho những người đam mê rừng rậm, chiếc bánh này kết hợp tính nghệ thuật và sự độc đáo để tạo ra một món
+		ăn trung tâm thực sự đẹp mắt. Hãy để bản thân và những đứa con cưng của bạn khám phá những điều kỳ diệu của vương quốc động vật khi chúng thưởng thức từng miếng ngon lành.'),
+		('SP16','Groot Fondant Cake','2023-09-26', 111399,'product16.jpg','L003',4.2,1230,N'Nhân vật hư cấu Groot của Marvel là một nhân vật đáng yêu. Vì vậy, hãy yêu mến những người 
+		thân yêu của bạn trong ngày sinh nhật của họ bằng cách tặng họ chiếc bánh I Am Groot do nhà thiết kế của chúng tôi thiết kế. Chiếc bánh được phủ một số lá kẹo mềm màu xanh 
+		lá cây và phần hoàn thiện thô để tạo ra một cái nhìn gần giống như một cái cây.');
 
 
 DELETE From LOAISANPHAM

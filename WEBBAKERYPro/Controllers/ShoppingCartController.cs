@@ -32,7 +32,18 @@ namespace WEBBAKERYPro.Controllers
             {
                 sanpham.SoLuong++;
             }
-            return RedirectToAction("Details", "Home", new { id = masp });
+            return Redirect(Request.UrlReferrer.ToString()); // Reload lai trang ma user dang su dung
+         //   return RedirectToAction("Details", "Home", new { id = masp });
+        }
+        public ActionResult CapNhatMatHang(string MaSP,int soluong)
+        {
+            List<MatHangMua> gioHang = LayGioHang();
+            var sanpham = gioHang.FirstOrDefault(s => s.MaBanh == MaSP);
+            if (sanpham != null)
+            {
+                sanpham.SoLuong = soluong;
+            }
+            return RedirectToAction("Index");
         }
         public int TingTongSL()
         {
@@ -50,7 +61,20 @@ namespace WEBBAKERYPro.Controllers
                 TongTien = gioHang.Sum(sp => sp.ThanhTien());
             return TongTien;
         }
-
+        public ActionResult XoaMatHang(string MaSP) {
+            List<MatHangMua> gioHang = LayGioHang();
+            var sanpham = gioHang.FirstOrDefault(s => s.MaBanh == MaSP);
+            if(sanpham != null)
+            {
+                gioHang.RemoveAll(s => s.MaBanh == MaSP);
+                return RedirectToAction("Index");
+            }
+            if(gioHang.Count == 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Index");
+        }
         public ActionResult Index()
         {
             List<MatHangMua> gioHang = LayGioHang();

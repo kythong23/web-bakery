@@ -24,7 +24,7 @@ namespace WEBBAKERYPro.Models
         public System.DateTime NgayDat { get; set; }
         public string DiaChiNhanHang { get; set; }
         public Nullable<bool> HTThanhToan { get; set; }
-        public string MaKH { get; set; }
+        public int MaKH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }

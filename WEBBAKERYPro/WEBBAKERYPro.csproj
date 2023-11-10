@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WEBBAKERYPro</RootNamespace>
     <AssemblyName>WEBBAKERYPro</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +45,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -52,20 +55,24 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -110,6 +117,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -128,6 +136,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BakeryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -188,6 +197,7 @@
     <Content Include="Content\Contact.css" />
     <Content Include="Content\Homepage.css" />
     <Content Include="Content\Ab.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\product3.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -198,10 +208,6 @@
     <Content Include="Images\imgdetails\pro1-a.jpg" />
     <Content Include="Images\imgdetails\pro1-b.jpg" />
     <Content Include="Images\imgdetails\pro1-c.jpg" />
-    <Content Include="Images\imgdetails\pro2-a.jpg" />
-    <Content Include="Images\imgdetails\pro2-b.jpg" />
-    <Content Include="Images\imgdetails\pro2-c.jpg" />
-    <Content Include="Images\imgdetails\pro2-d.jpg" />
     <Content Include="Images\imgdetails\pro3-a.jpg" />
     <Content Include="Images\imgdetails\pro3-b.jpg" />
     <Content Include="Images\imgdetails\pro3-c.jpg" />
@@ -213,12 +219,27 @@
     <Content Include="Images\imgdetails\pro5-a.jpg" />
     <Content Include="Images\imgdetails\pro5-b.jpg" />
     <Content Include="Images\imgdetails\pro5-c.jpg" />
+    <Content Include="Images\imgdetails\product2-a.jpg" />
+    <Content Include="Images\imgdetails\product2-b.jpg" />
+    <Content Include="Images\imgdetails\product2-c.jpg" />
+    <Content Include="Images\imgdetails\product2-d.jpg" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\product1.jpg" />
+    <Content Include="Images\product10.jpg" />
+    <Content Include="Images\product11.jpg" />
+    <Content Include="Images\product12.jpg" />
+    <Content Include="Images\product13.jpg" />
+    <Content Include="Images\product14.jpg" />
+    <Content Include="Images\product15.jpg" />
+    <Content Include="Images\product16.jpg" />
     <Content Include="Images\product2.jpg" />
     <Content Include="Images\product3.jpg" />
     <Content Include="Images\product4.jpg" />
     <Content Include="Images\product5.jpg" />
+    <Content Include="Images\product6.jpg" />
+    <Content Include="Images\product7.jpg" />
+    <Content Include="Images\product8.jpg" />
+    <Content Include="Images\product9.jpg" />
     <Content Include="Models\BakeryModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BakeryModel.edmx</DependentUpon>
@@ -270,9 +291,11 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Home\LayLoaiSanPham.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Shared\Search.cshtml" />
     <Content Include="Views\ShoppingCart\GioHangPartial.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
