@@ -50,6 +50,14 @@ create table CHITIETDONHANG (
 	FOREIGN KEY (MaDH) REFERENCES DONHANG (MaDH),
 	FOREIGN KEY (MaSP) REFERENCES SANPHAM (MaSP)
 )
+create table Admin 
+(
+	UserAd varchar (100) primary key,
+	PassAd varchar (100),
+	HoTen nvarchar (50),
+	VaiTro varchar(30)
+)
+insert into admin values ('admin','admin123456','Le Tran Ky Nhong','ADMIN')
 Alter table SANPHAM add RateSP float;
 Alter table SANPHAM add ReviewSP int;
 Alter table SANPHAM add MotaSP nvarchar(max);

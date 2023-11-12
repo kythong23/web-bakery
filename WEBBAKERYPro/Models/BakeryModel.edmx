@@ -4,7 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bakeryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bakeryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="UserAd" />
+          </Key>
+          <Property Name="UserAd" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PassAd" Type="varchar" MaxLength="100" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="VaiTro" Type="varchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="CHITIETDONHANG">
           <Key>
             <PropertyRef Name="MaDH" />
@@ -55,7 +64,7 @@
           <Property Name="ReviewSP" Type="int" />
           <Property Name="MotaSP" Type="nvarchar(max)" />
         </EntityType>
-        <Association Name="FK__CHITIETDON__MaDH__300424B4">
+        <Association Name="FK__CHITIETDON__MaDH__32E0915F">
           <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
           <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -67,7 +76,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETDON__MaSP__30F848ED">
+        <Association Name="FK__CHITIETDON__MaSP__33D4B598">
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
           <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -79,7 +88,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DONHANG__MaKH__2D27B809">
+        <Association Name="FK__DONHANG__MaKH__300424B4">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
           <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -91,7 +100,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SANPHAM__MaLoai__29572725">
+        <Association Name="FK__SANPHAM__MaLoai__2C3393D0">
           <End Role="LOAISANPHAM" Type="Self.LOAISANPHAM" Multiplicity="1" />
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
           <ReferentialConstraint>
@@ -104,30 +113,30 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="bakeryModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHITIETDONHANG" EntityType="Self.CHITIETDONHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAISANPHAM" EntityType="Self.LOAISANPHAM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__CHITIETDON__MaDH__300424B4" Association="Self.FK__CHITIETDON__MaDH__300424B4">
+          <AssociationSet Name="FK__CHITIETDON__MaDH__32E0915F" Association="Self.FK__CHITIETDON__MaDH__32E0915F">
             <End Role="DONHANG" EntitySet="DONHANG" />
             <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETDON__MaSP__30F848ED" Association="Self.FK__CHITIETDON__MaSP__30F848ED">
+          <AssociationSet Name="FK__CHITIETDON__MaSP__33D4B598" Association="Self.FK__CHITIETDON__MaSP__33D4B598">
             <End Role="SANPHAM" EntitySet="SANPHAM" />
             <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__DONHANG__MaKH__2D27B809" Association="Self.FK__DONHANG__MaKH__2D27B809">
+          <AssociationSet Name="FK__DONHANG__MaKH__300424B4" Association="Self.FK__DONHANG__MaKH__300424B4">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="DONHANG" EntitySet="DONHANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__SANPHAM__MaLoai__29572725" Association="Self.FK__SANPHAM__MaLoai__29572725">
+          <AssociationSet Name="FK__SANPHAM__MaLoai__2C3393D0" Association="Self.FK__SANPHAM__MaLoai__2C3393D0">
             <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
             <End Role="SANPHAM" EntitySet="SANPHAM" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bakeryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -140,8 +149,8 @@
           <Property Name="MaSP" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="ThanhTien" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DONHANG" Relationship="Self.FK__CHITIETDON__MaDH__300424B4" FromRole="CHITIETDONHANG" ToRole="DONHANG" />
-          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__CHITIETDON__MaSP__30F848ED" FromRole="CHITIETDONHANG" ToRole="SANPHAM" />
+          <NavigationProperty Name="DONHANG" Relationship="Self.FK__CHITIETDON__MaDH__32E0915F" FromRole="CHITIETDONHANG" ToRole="DONHANG" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__CHITIETDON__MaSP__33D4B598" FromRole="CHITIETDONHANG" ToRole="SANPHAM" />
         </EntityType>
         <EntityType Name="DONHANG">
           <Key>
@@ -152,8 +161,8 @@
           <Property Name="DiaChiNhanHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="HTThanhToan" Type="Boolean" />
           <Property Name="MaKH" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CHITIETDONHANGs" Relationship="Self.FK__CHITIETDON__MaDH__300424B4" FromRole="DONHANG" ToRole="CHITIETDONHANG" />
-          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__DONHANG__MaKH__2D27B809" FromRole="DONHANG" ToRole="KHACHHANG" />
+          <NavigationProperty Name="CHITIETDONHANGs" Relationship="Self.FK__CHITIETDON__MaDH__32E0915F" FromRole="DONHANG" ToRole="CHITIETDONHANG" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__DONHANG__MaKH__300424B4" FromRole="DONHANG" ToRole="KHACHHANG" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -163,7 +172,7 @@
           <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DONHANGs" Relationship="Self.FK__DONHANG__MaKH__2D27B809" FromRole="KHACHHANG" ToRole="DONHANG" />
+          <NavigationProperty Name="DONHANGs" Relationship="Self.FK__DONHANG__MaKH__300424B4" FromRole="KHACHHANG" ToRole="DONHANG" />
         </EntityType>
         <EntityType Name="LOAISANPHAM">
           <Key>
@@ -171,7 +180,7 @@
           </Key>
           <Property Name="MaLoai" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TenLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MaLoai__29572725" FromRole="LOAISANPHAM" ToRole="SANPHAM" />
+          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MaLoai__2C3393D0" FromRole="LOAISANPHAM" ToRole="SANPHAM" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
@@ -186,10 +195,10 @@
           <Property Name="RateSP" Type="Double" />
           <Property Name="ReviewSP" Type="Int32" />
           <Property Name="MotaSP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CHITIETDONHANGs" Relationship="Self.FK__CHITIETDON__MaSP__30F848ED" FromRole="SANPHAM" ToRole="CHITIETDONHANG" />
-          <NavigationProperty Name="LOAISANPHAM" Relationship="Self.FK__SANPHAM__MaLoai__29572725" FromRole="SANPHAM" ToRole="LOAISANPHAM" />
+          <NavigationProperty Name="CHITIETDONHANGs" Relationship="Self.FK__CHITIETDON__MaSP__33D4B598" FromRole="SANPHAM" ToRole="CHITIETDONHANG" />
+          <NavigationProperty Name="LOAISANPHAM" Relationship="Self.FK__SANPHAM__MaLoai__2C3393D0" FromRole="SANPHAM" ToRole="LOAISANPHAM" />
         </EntityType>
-        <Association Name="FK__CHITIETDON__MaDH__300424B4">
+        <Association Name="FK__CHITIETDON__MaDH__32E0915F">
           <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
           <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,7 +210,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETDON__MaSP__30F848ED">
+        <Association Name="FK__CHITIETDON__MaSP__33D4B598">
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
           <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -213,7 +222,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DONHANG__MaKH__2D27B809">
+        <Association Name="FK__DONHANG__MaKH__300424B4">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
           <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -225,7 +234,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SANPHAM__MaLoai__29572725">
+        <Association Name="FK__SANPHAM__MaLoai__2C3393D0">
           <End Role="LOAISANPHAM" Type="Self.LOAISANPHAM" Multiplicity="1" />
           <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
           <ReferentialConstraint>
@@ -243,23 +252,33 @@
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
           <EntitySet Name="LOAISANPHAMs" EntityType="Self.LOAISANPHAM" />
           <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
-          <AssociationSet Name="FK__CHITIETDON__MaDH__300424B4" Association="Self.FK__CHITIETDON__MaDH__300424B4">
+          <AssociationSet Name="FK__CHITIETDON__MaDH__32E0915F" Association="Self.FK__CHITIETDON__MaDH__32E0915F">
             <End Role="DONHANG" EntitySet="DONHANGs" />
             <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANGs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETDON__MaSP__30F848ED" Association="Self.FK__CHITIETDON__MaSP__30F848ED">
+          <AssociationSet Name="FK__CHITIETDON__MaSP__33D4B598" Association="Self.FK__CHITIETDON__MaSP__33D4B598">
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
             <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANGs" />
           </AssociationSet>
-          <AssociationSet Name="FK__DONHANG__MaKH__2D27B809" Association="Self.FK__DONHANG__MaKH__2D27B809">
+          <AssociationSet Name="FK__DONHANG__MaKH__300424B4" Association="Self.FK__DONHANG__MaKH__300424B4">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="DONHANG" EntitySet="DONHANGs" />
           </AssociationSet>
-          <AssociationSet Name="FK__SANPHAM__MaLoai__29572725" Association="Self.FK__SANPHAM__MaLoai__29572725">
+          <AssociationSet Name="FK__SANPHAM__MaLoai__2C3393D0" Association="Self.FK__SANPHAM__MaLoai__2C3393D0">
             <End Role="LOAISANPHAM" EntitySet="LOAISANPHAMs" />
             <End Role="SANPHAM" EntitySet="SANPHAMs" />
           </AssociationSet>
+          <EntitySet Name="Admins" EntityType="bakeryModel.Admin" />
         </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="UserAd" />
+          </Key>
+          <Property Name="UserAd" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PassAd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VaiTro" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -317,6 +336,16 @@
                 <ScalarProperty Name="RateSP" ColumnName="RateSP" />
                 <ScalarProperty Name="ReviewSP" ColumnName="ReviewSP" />
                 <ScalarProperty Name="MotaSP" ColumnName="MotaSP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="bakeryModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="PassAd" ColumnName="PassAd" />
+                <ScalarProperty Name="UserAd" ColumnName="UserAd" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

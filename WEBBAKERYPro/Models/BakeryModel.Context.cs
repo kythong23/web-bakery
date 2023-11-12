@@ -30,5 +30,6 @@ namespace WEBBAKERYPro.Models
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<LOAISANPHAM> LOAISANPHAMs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; }
     }
 }
