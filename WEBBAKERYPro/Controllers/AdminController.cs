@@ -15,7 +15,10 @@ namespace WEBBAKERYPro.Controllers
         {
             return View();
         }
-
+        public ActionResult QuanLySP()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult Login ()
         {

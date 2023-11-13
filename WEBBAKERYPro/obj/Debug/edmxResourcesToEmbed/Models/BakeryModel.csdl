@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="bakeryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="UserAd" />
+    </Key>
+    <Property Name="UserAd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PassAd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VaiTro" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="CHITIETDONHANG">
     <Key>
       <PropertyRef Name="MaDH" />
@@ -107,6 +116,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="bakeryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="CHITIETDONHANGs" EntityType="Self.CHITIETDONHANG" />
     <EntitySet Name="DONHANGs" EntityType="Self.DONHANG" />
     <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
@@ -128,15 +138,5 @@
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAMs" />
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
     </AssociationSet>
-    <EntitySet Name="Admins" EntityType="bakeryModel.Admin" />
   </EntityContainer>
-  <EntityType Name="Admin">
-    <Key>
-      <PropertyRef Name="UserAd" />
-    </Key>
-    <Property Name="UserAd" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="PassAd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="VaiTro" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>

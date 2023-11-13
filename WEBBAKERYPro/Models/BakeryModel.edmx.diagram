@@ -4,7 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c45ef95478eb47e2a5211f536e7b4ea7" Name="Diagram1">
+      <Diagram DiagramId="734cc9212f67473ca909a8a9480cf65a" Name="Diagram1">
+        <EntityTypeShape EntityType="bakeryModel.Admin" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.CHITIETDONHANG" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.DONHANG" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
@@ -14,7 +15,6 @@
         <AssociationConnector Association="bakeryModel.FK__CHITIETDON__MaSP__33D4B598" ManuallyRouted="false" />
         <AssociationConnector Association="bakeryModel.FK__DONHANG__MaKH__300424B4" ManuallyRouted="false" />
         <AssociationConnector Association="bakeryModel.FK__SANPHAM__MaLoai__2C3393D0" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="bakeryModel.Admin" Width="1.5" PointX="5.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="bakeryModelStoreContainer" CdmEntityContainer="bakeryEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="bakeryModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="UserAd" ColumnName="UserAd" />
+          <ScalarProperty Name="PassAd" ColumnName="PassAd" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CHITIETDONHANGs">
       <EntityTypeMapping TypeName="bakeryModel.CHITIETDONHANG">
         <MappingFragment StoreEntitySet="CHITIETDONHANG">
@@ -52,16 +62,6 @@
           <ScalarProperty Name="RateSP" ColumnName="RateSP" />
           <ScalarProperty Name="ReviewSP" ColumnName="ReviewSP" />
           <ScalarProperty Name="MotaSP" ColumnName="MotaSP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Admins">
-      <EntityTypeMapping TypeName="bakeryModel.Admin">
-        <MappingFragment StoreEntitySet="Admin">
-          <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-          <ScalarProperty Name="PassAd" ColumnName="PassAd" />
-          <ScalarProperty Name="UserAd" ColumnName="UserAd" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
