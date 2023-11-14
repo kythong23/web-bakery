@@ -48,7 +48,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <h5>@sanpham.TenBanh</h5>
+                                        <h6>@sanpham.TenBanh</h6>
                                         <div>@sanpham.MaBanh</div>
                                     </td>
                                 </tr>
@@ -75,6 +75,7 @@
         <h3 style=" background: #f8f5f0;max-width:300px;padding:8px;">Tổng kết đơn hàng</h3>
         <div colspan="5">Tổng số lượng: @ViewBag.TongSL</div>
         <div colspan="1">Tổng tiền: @ViewBag.TongTien</div>
+        <div>@Html.ActionLink("Đặt hàng", "DatHang", "ShoppingCart", new { @class = "btn btn-success" })</div>
     </div>
 </div>
 

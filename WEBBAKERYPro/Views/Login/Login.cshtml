@@ -10,15 +10,14 @@
         left: 0;
         z-index: 999;
     }
-
         .backgroundlogin div {
             transition: 0.5s;
         }
 
 
     #layoutsignup {
-        max-width: 700px;
-        width: 700px;
+        max-width: 1400px;
+        width: 800px;
         height: fit-content;
         position: absolute;
         top: 0;
@@ -36,16 +35,25 @@
     }
 
     #wrapperlayout {
-        max-width: 700px;
-        width: 700px;
-        height: 400px;
+        max-width: 1400px;
+        width: 800px;
+        height: 550px;
         position: absolute;
         left: 450px;
         top: 225px;
         outline: none;
         background: white;
         overflow: hidden;
-        border-radius:5px;
+        border-radius: 5px;
+    }
+
+    #btnsignup {
+        background: #468fce;
+        color: white;
+        font-weight: bold;
+        height: 30px;
+        border-radius: 8px;
+        width: 100px;
     }
 </style>
 <script>
@@ -56,16 +64,16 @@
         layoutlogin.style.left = '-900px';
         layoutsignup.style.left = '0px';
     }
-    function closeform() {
-        document.getElementById("loginform").style.opacity = 0;
-    }
+    //function closeform() {
+    //    document.getElementById("loginform").style.opacity = 0;
+    //}
 </script>
 <div class="backgroundlogin">
     <div id="wrapperlayout">
-        <div id="layoutlogin">
+        <div id="layoutlogin" style="position:absolute;">
             <div class="row">
-                <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-5" height="400px" />
-                <div class="col-6">
+                <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-7" height="700px" />
+                <div class="col-4">
                     <h2>@ViewBag.Thongbao</h2>
                     @using (Html.BeginForm("Login", "Login"))
                     {
@@ -79,18 +87,25 @@
                         <div class="password">
                             @Html.Password("MatKhau", null, new { @id = "password", required = "required" })
                         </div>
-                        <div>
+                        <p>
+                            <span>
+
                             <button style="background: #468fce; color: white; font-weight: bold;height:30px;border-radius:8px;width:100px;" type="submit">Đăng nhập</button>
-                        </div>
+                            </span>
+                            <span>
+
+                            <button id="btnsignup" onclick="signup()">Đăng ký</button>
+                            </span>
+                        </p>
 
                     }
-                    <a href="@Url.Action("Register","Login")" style="position:absolute;right:50px;bottom:115px;"><button style="background: #468fce; color: white; font-weight: bold; height: 30px; border-radius: 8px; width: 100px;">Đăng ký</button></a>
+                    @*<button id="btnsignup" onclick="signup()">Đăng ký</button>*@
                 </div>
                 <div class="col-1">
                     <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
                 </div>
             </div>
         </div>
-
+        @Html.Action("Register","Login")
     </div>
 </div>

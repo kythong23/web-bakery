@@ -25,17 +25,6 @@
         margin-top: 3px;
     }
 
-    #wrapperlayout {
-        max-width: 700px;
-        width: 700px;
-        height: 500px;
-        position: absolute;
-        left: 450px;
-        top: 225px;
-        outline: none;
-        background: white;
-        overflow: hidden;
-    }
 </style>
 <script>
     function signup() {
@@ -46,45 +35,50 @@
         layoutsignup.style.left = '0px';
     }
 </script>
-<div class="backgroundlogin">
-    <div id="wrapperlayout">
-        <div id="layoutsignup">
-            <div class="row">
-                <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-5" height="400px" />
-                <div class="col-6">
-                    @using (Html.BeginForm("Register", "Login"))
-                    {
-                        @Html.ValidationSummary(true)
-                        <h2>Xin chào!</h2>
-                        <h2>Đăng ký tài khoản</h2>
-                        <div>Họ Tên</div>
-                        <div class="name">
-                            @Html.TextBox("HoTen", null, new { @id = "hoten", required = "required" })
-                        </div>
-                        <div>Tên đăng nhập</div>
-                        <div class="username">
-                            @Html.TextBox("Email", null, new { @id = "username", required = "required" })
-
-                        </div>
-                        <div>Mật khẩu</div>
-                        <div class="password">
-                            @Html.Password("MatKhau", null, new { @id = "password", required = "required" })
-                        </div>
-                        <div>
-
-                            <div>
-                                <button type="submit">Đăng ký</button>
-                            </div>
-                            <div>
-                            </div>
-                        </div>
-                    }
+<div id="layoutsignup">
+    <div class="row">
+        <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-7" height="700px" />
+        <div class="col-4">
+            @using (Html.BeginForm("Register", "Login"))
+            {
+                @Html.ValidationSummary(true)
+                <h2>Xin chào!</h2>
+                <h2>Đăng ký tài khoản</h2>
+                <div>Họ Tên</div>
+                <div class="name">
+                    @Html.TextBox("HoTen", null, new { @id = "hoten", required = "required" })
                 </div>
-                <div class="col-1">
-                    <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
+                <div>Tên đăng nhập</div>
+                <div class="username">
+                    @Html.TextBox("Email", null, new { @id = "username", required = "required" })
+
                 </div>
-            </div>
+                <div>Số điện thoại</div>
+                <div class="username">
+                    @Html.TextBox("SDT", null, new { @id = "sdt", required = "required" })
+
+                </div>
+                <div>Địa chỉ</div>
+                <div class="username">
+                    @Html.TextBox("DiaChi", null, new { @id = "diachi", required = "required" })
+
+                </div>
+                <div>Mật khẩu</div>
+                <div class="password">
+                    @Html.Password("MatKhau", null, new { @id = "password", required = "required" })
+                </div>
+                <div>
+
+                    <div>
+                        <button type="submit">Đăng ký</button>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-1">
+            <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
         </div>
     </div>
 </div>
-

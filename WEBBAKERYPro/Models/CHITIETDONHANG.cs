@@ -14,7 +14,7 @@ namespace WEBBAKERYPro.Models
     
     public partial class CHITIETDONHANG
     {
-        public string MaDH { get; set; }
+        public int MaDH { get; set; }
         public string MaSP { get; set; }
         public int SoLuong { get; set; }
         public int ThanhTien { get; set; }

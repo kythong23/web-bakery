@@ -1028,13 +1028,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\BakeryModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BakeryModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\BakeryModel.edmx.diagram">
-      <DependentUpon>BakeryModel.edmx</DependentUpon>
-    </Content>
     <Content Include="assets\images\big\Thumbs.db" />
     <Content Include="assets\libs\bootstrap\dist\css\bootstrap-grid.css.map" />
     <Content Include="assets\libs\bootstrap\dist\css\bootstrap-grid.min.css.map" />
@@ -1239,6 +1232,13 @@
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.scss" />
     <Content Include="dist\css\materialdesignicons.min.css.map" />
+    <EntityDeploy Include="Models\BakeryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BakeryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BakeryModel.edmx.diagram">
+      <DependentUpon>BakeryModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1250,28 +1250,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Admin\authentication-login.html" />
-    <Content Include="Views\Admin\authentication-register.html" />
-    <Content Include="Views\Admin\charts.html" />
-    <Content Include="Views\Admin\error-403.html" />
-    <Content Include="Views\Admin\error-404.html" />
-    <Content Include="Views\Admin\error-405.html" />
-    <Content Include="Views\Admin\error-500.html" />
-    <Content Include="Views\Admin\form-basic.html" />
-    <Content Include="Views\Admin\form-wizard.html" />
-    <Content Include="Views\Admin\grid.html" />
-    <Content Include="Views\Admin\icon-fontawesome.html" />
-    <Content Include="Views\Admin\icon-material.html" />
-    <Content Include="Views\Admin\index.html" />
-    <Content Include="Views\Admin\index2.html" />
-    <Content Include="Views\Admin\pages-buttons.html" />
-    <Content Include="Views\Admin\pages-calendar.html" />
-    <Content Include="Views\Admin\pages-chat.html" />
-    <Content Include="Views\Admin\pages-elements.html" />
-    <Content Include="Views\Admin\pages-gallery.html" />
-    <Content Include="Views\Admin\pages-invoice.html" />
-    <Content Include="Views\Admin\tables.html" />
-    <Content Include="Views\Admin\widgets.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1408,6 +1386,8 @@
     <Content Include="src\scss\widgets\widgets.scss" />
     <Content Include="src\scss\_landingpage.scss" />
     <Content Include="Views\Admin\QuanLySP.cshtml" />
+    <Content Include="Views\ShoppingCart\DatHangThanhCong.cshtml" />
+    <Content Include="Views\ShoppingCart\DatHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

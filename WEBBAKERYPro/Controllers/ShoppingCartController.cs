@@ -9,6 +9,7 @@ namespace WEBBAKERYPro.Controllers
 {
     public class ShoppingCartController : Controller
     {
+        bakeryEntities database = new bakeryEntities();
         public List<MatHangMua> LayGioHang() 
         {
             List<MatHangMua> gioHang = Session["GioHang"] as List<MatHangMua>;        
@@ -92,5 +93,57 @@ namespace WEBBAKERYPro.Controllers
             ViewBag.TongTien = TingTongTien();
             return PartialView();
         }
-    }
+        public ActionResult DatHang()
+        {
+            if (Session["TaiKhoan"] == null)
+            {
+                Session["DangNhap"] = "chuadangnhap" ;
+                return RedirectToAction("Index");
+            }
+            List<MatHangMua> gioHang = LayGioHang();
+            return View(gioHang);
+        }
+
+        public ActionResult DatHangThanhCong()
+        {
+            return View();
+        }
+        public ActionResult Xoass()
+        {
+            Session.Remove("DangNhap");
+            return RedirectToAction(Request.UrlReferrer?.ToString());
+        }
+        public ActionResult DongYDatHang()
+        {
+            KHACHHANG kHACHHANG = Session["TaiKhoan"] as KHACHHANG;
+            List<MatHangMua> giohang = LayGioHang();
+
+            DONHANG donhang = new DONHANG();
+            donhang.MaKH = kHACHHANG.MaKH;
+            donhang.NgayDat = DateTime.Now;
+            donhang.TongGia = (int)TingTongTien();
+            donhang.DaGiao = false;
+            donhang.TenNN = kHACHHANG.HoTen;
+            donhang.DiaChiNhanHang = kHACHHANG.DiaChi;
+            donhang.SDT = kHACHHANG.SDT;
+            donhang.HTThanhToan = false;
+
+            database.DONHANGs.Add(donhang);
+            database.SaveChanges();
+
+            foreach (var sanpham in giohang)
+            {
+                CHITIETDONHANG chitiet = new CHITIETDONHANG();
+                chitiet.MaDH = donhang.MaDH;
+                chitiet.MaSP = sanpham.MaBanh;
+                chitiet.SoLuong = sanpham.SoLuong;
+                chitiet.ThanhTien = (int)sanpham.GiaBanh;
+                database.CHITIETDONHANGs.Add(chitiet);
+
+            }
+            database.SaveChanges();
+            Session["GioHang"] = null;
+            return RedirectToAction("DatHangThanhCong");
+        }
+    } 
 }

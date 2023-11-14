@@ -20,8 +20,12 @@ namespace WEBBAKERYPro.Models
             this.CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
         }
     
-        public string MaDH { get; set; }
+        public int MaDH { get; set; }
         public System.DateTime NgayDat { get; set; }
+        public Nullable<int> TongGia { get; set; }
+        public Nullable<bool> DaGiao { get; set; }
+        public string TenNN { get; set; }
+        public string SDT { get; set; }
         public string DiaChiNhanHang { get; set; }
         public Nullable<bool> HTThanhToan { get; set; }
         public int MaKH { get; set; }

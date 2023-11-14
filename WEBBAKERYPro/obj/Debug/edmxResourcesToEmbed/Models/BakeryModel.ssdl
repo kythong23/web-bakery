@@ -14,7 +14,7 @@
       <PropertyRef Name="MaDH" />
       <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaDH" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="MaDH" Type="int" Nullable="false" />
     <Property Name="MaSP" Type="char" MaxLength="4" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="ThanhTien" Type="int" Nullable="false" />
@@ -23,8 +23,12 @@
     <Key>
       <PropertyRef Name="MaDH" />
     </Key>
-    <Property Name="MaDH" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="MaDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NgayDat" Type="date" Nullable="false" />
+    <Property Name="TongGia" Type="int" />
+    <Property Name="DaGiao" Type="bit" />
+    <Property Name="TenNN" Type="nvarchar" MaxLength="100" />
+    <Property Name="SDT" Type="char" MaxLength="12" />
     <Property Name="DiaChiNhanHang" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="HTThanhToan" Type="bit" />
     <Property Name="MaKH" Type="int" Nullable="false" />
@@ -36,6 +40,8 @@
     <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="SDT" Type="char" MaxLength="12" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="MatKhau" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="LOAISANPHAM">
@@ -59,7 +65,7 @@
     <Property Name="ReviewSP" Type="int" />
     <Property Name="MotaSP" Type="nvarchar(max)" />
   </EntityType>
-  <Association Name="FK__CHITIETDON__MaDH__32E0915F">
+  <Association Name="FK__CHITIETDON__MaDH__36B12243">
     <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
     <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -71,7 +77,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CHITIETDON__MaSP__33D4B598">
+  <Association Name="FK__CHITIETDON__MaSP__37A5467C">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -83,7 +89,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DONHANG__MaKH__300424B4">
+  <Association Name="FK__DONHANG__MaKH__30F848ED">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -114,15 +120,15 @@
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAISANPHAM" EntityType="Self.LOAISANPHAM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__CHITIETDON__MaDH__32E0915F" Association="Self.FK__CHITIETDON__MaDH__32E0915F">
+    <AssociationSet Name="FK__CHITIETDON__MaDH__36B12243" Association="Self.FK__CHITIETDON__MaDH__36B12243">
       <End Role="DONHANG" EntitySet="DONHANG" />
       <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CHITIETDON__MaSP__33D4B598" Association="Self.FK__CHITIETDON__MaSP__33D4B598">
+    <AssociationSet Name="FK__CHITIETDON__MaSP__37A5467C" Association="Self.FK__CHITIETDON__MaSP__37A5467C">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__DONHANG__MaKH__300424B4" Association="Self.FK__DONHANG__MaKH__300424B4">
+    <AssociationSet Name="FK__DONHANG__MaKH__30F848ED" Association="Self.FK__DONHANG__MaKH__30F848ED">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="DONHANG" EntitySet="DONHANG" />
     </AssociationSet>

@@ -1,0 +1,74 @@
+﻿@using WEBBAKERYPro.Models
+@model List<MatHangMua>
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    KHACHHANG khach = Session["TaiKhoan"] as KHACHHANG;
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sanpham in Model)
+        {
+            <tr>
+                <td id="sanpham">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})">
+                                    <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
+                                </a>
+                            </td>
+                            <td>
+                                <h6>@sanpham.TenBanh</h6>
+                                <div>@sanpham.MaBanh</div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                @using (Html.BeginForm("CapNhatMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }))
+                {
+                    <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
+                    <td>
+                        <input type="number" min="1" value="@sanpham.SoLuong" name="SoLuong" />
+                    </td>
+                    <td>@sanpham.ThanhTien()</td>
+                    <td>
+                        <button type="submit" class="btn btn-outline-primary">Cập nhật</button>
+                    </td>
+                }
+                <td> @Html.ActionLink("Xóa hàng", "XoaMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h2>THONG TIN KHACH HANG</h2>
+<table class="table table-bordered">
+    <tr>
+        <td>Ho ten: </td>
+        <td>@khach.HoTen</td>
+    </tr>
+    <tr>
+        <td>Dia chi: </td>
+        <td>@khach.DiaChi</td>
+    </tr>
+    <tr>
+        <td>Dien thoai: </td>
+        <td>@khach.SDT</td>
+    </tr>
+    <tr>
+        <td>Ngay dat: </td>
+        <td>@DateTime.Now.ToShortDateString()</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Dong y dat hang", "DongYDatHang","ShoppingCart",new {@class = "btn btn-primary"})</td>
+    </tr>
+</table>

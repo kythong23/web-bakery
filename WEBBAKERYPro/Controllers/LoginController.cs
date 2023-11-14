@@ -71,6 +71,10 @@ namespace WEBBAKERYPro.Controllers
                     ModelState.AddModelError(string.Empty, "Email không được để trống");
                 if (string.IsNullOrEmpty(kh.MatKhau))
                     ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
+                if (kh.SDT == null)
+                    ModelState.AddModelError(string.Empty, "Số điện thoại không được để trống");
+                if (string.IsNullOrEmpty(kh.DiaChi))
+                    ModelState.AddModelError(string.Empty, "Địa chỉ không được để trống");
 
                 var khachhang = database.KHACHHANGs.FirstOrDefault(k => k.Email == kh.Email);
                 if (khachhang != null)

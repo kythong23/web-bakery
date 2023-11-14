@@ -12,6 +12,8 @@ create table KHACHHANG (
 	MaKH int identity(1,1),
 	HoTen nvarchar (100) NOT NULL,
 	Email varchar (100) unique,
+	SDT char(12),
+	DiaChi nvarchar(100) not null,
 	MatKhau varchar (100) NOT NULL,
 	PRIMARY KEY (MaKH)
 )
@@ -33,8 +35,12 @@ create table LOAISANPHAM(
 	PRIMARY KEY (MaLoai)
 )
 create table DONHANG (
-	MaDH char (4) NOT NULL,
+	MaDH int identity(1,1),
 	NgayDat date NOT NULL,
+	TongGia int,
+	DaGiao Bit Default 0,
+	TenNN nvarchar (100),
+	SDT char(12),
 	DiaChiNhanHang nvarchar(100) NOT NULL,
 	HTThanhToan Bit Default 0,
 	MaKH int NOT NULL,
@@ -42,7 +48,7 @@ create table DONHANG (
 	FOREIGN KEY (MaKH) REFERENCES KHACHHANG (MaKH)
 )
 create table CHITIETDONHANG (
-	MaDH char (4) NOT NULL,
+	MaDH int NOT NULL,
 	MaSP char(4) NOT NULL,
 	SoLuong int NOT NULL,
 	ThanhTien int NOT NULL,
@@ -116,8 +122,6 @@ VALUES
 		('SP16','Groot Fondant Cake','2023-09-26', 111399,'product16.jpg','L003',4.2,1230,N'Nhân vật hư cấu Groot của Marvel là một nhân vật đáng yêu. Vì vậy, hãy yêu mến những người 
 		thân yêu của bạn trong ngày sinh nhật của họ bằng cách tặng họ chiếc bánh I Am Groot do nhà thiết kế của chúng tôi thiết kế. Chiếc bánh được phủ một số lá kẹo mềm màu xanh 
 		lá cây và phần hoàn thiện thô để tạo ra một cái nhìn gần giống như một cái cây.');
-
-
 DELETE From LOAISANPHAM
 INSERT INTO LOAISANPHAM (MaLoai, TenLoai)
 VALUES ('L001', N'Sản phẩm đặc trưng'),

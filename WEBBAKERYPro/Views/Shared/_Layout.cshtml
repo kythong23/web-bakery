@@ -18,17 +18,21 @@
             layoutsignup.style.left = '0px';
         }
         function closeform() {
-            document.getElementById("loginform").style.opacity = 0;
+            document.getElementById("loginform").style.display = 'none';
+            $.ajax({
+                url: 'ShoppingCart/Xoass',
+                type: 'GET',
+            });
         }
         function Login() {
              var xhr = new XMLHttpRequest();
                 xhr.open('GET', '@Url.Action("Login", "Login")', true);
                 xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
                     document.getElementById("loginform").innerHTML = xhr.responseText;
                     // Đặt opacity thành 1
-                    document.getElementById("loginform").style.opacity = 1;
-                    document.getElementById("loginform").style.transition = 'linear 1s';
+                        document.getElementById("loginform").style.transition = 'linear 0.3s';
+                        document.getElementById("loginform").style.display = 'inline-block';
                 }
         };
             xhr.send();
@@ -36,7 +40,7 @@
     </script>
     <style>
         #loginform {
-            opacity: 0;
+            display:none;
         }
     </style>
 </head>
@@ -46,21 +50,19 @@
         <nav class="menunavbar" style="padding-right:0px;">
             @Html.Partial("Search", "Home")
         </nav>
-        <div id="loginform">
-        </div>
-        @*@if (ViewBag.ThongBao == null)
+        @*<div id="loginform">
+        </div>*@
+        @if (Session["DangNhap"] != null && Session["TaiKhoan"] == null)
         {
-            <div id="loginform">
-                @Html.Partial("Login")
+            <div id="loginform" style="display:inline-block;">
+                @Html.Action("Login", "Login")
             </div>
         }
         else
         {
             <div id="loginform">
-                @Html.Partial("Login")
             </div>
-        }*@
-
+        }
         @RenderBody()
     </div>
     <buton class="ButtonChat">

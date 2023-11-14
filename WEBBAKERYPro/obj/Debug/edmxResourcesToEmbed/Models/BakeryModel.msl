@@ -26,6 +26,10 @@
         <MappingFragment StoreEntitySet="DONHANG">
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="TongGia" ColumnName="TongGia" />
+          <ScalarProperty Name="DaGiao" ColumnName="DaGiao" />
+          <ScalarProperty Name="TenNN" ColumnName="TenNN" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="DiaChiNhanHang" ColumnName="DiaChiNhanHang" />
           <ScalarProperty Name="HTThanhToan" ColumnName="HTThanhToan" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
@@ -38,6 +42,8 @@
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
         </MappingFragment>
       </EntityTypeMapping>
