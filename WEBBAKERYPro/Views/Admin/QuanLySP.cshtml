@@ -1,8 +1,73 @@
-﻿
+﻿@model IEnumerable<WEBBAKERYPro.Models.SANPHAM>
+
 @{
     ViewBag.Title = "QuanLySP";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>QuanLySP</h2>
+<h2 style="margin-top:20px;margin-left:20px">QuanLySP</h2>
+
+<p style="text-decoration: none; color: black; display: inline-block;padding: 5px; ">
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr style="border-bottom:solid">
+        <th>
+            Ảnh SP
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Ngày SX
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Rate
+        </th>
+        <th>
+            Review
+        </th>
+        <th>
+            Loại
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+
+        <tr>
+            <td>
+                <img class="card-img-top book-picture" style="height:40px" src="~/Images/@Html.DisplayFor(modelItem => item.HinhSP)" alt="Cardimage">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RateSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LOAISANPHAM.TenLoai)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP })
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+            </td>
+        </tr>
+    }
+
+</table>
 

@@ -23,15 +23,17 @@ namespace WEBBAKERYPro.Models
         public int MaDH { get; set; }
         public System.DateTime NgayDat { get; set; }
         public Nullable<int> TongGia { get; set; }
-        public Nullable<bool> DaGiao { get; set; }
         public string TenNN { get; set; }
         public string SDT { get; set; }
         public string DiaChiNhanHang { get; set; }
-        public Nullable<bool> HTThanhToan { get; set; }
         public int MaKH { get; set; }
+        public string MaHT { get; set; }
+        public string MaTT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
+        public virtual HINHTHUCGIAOHANG HINHTHUCGIAOHANG { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual TINHTRANGDONHANG TINHTRANGDONHANG { get; set; }
     }
 }

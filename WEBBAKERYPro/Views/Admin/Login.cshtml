@@ -9,27 +9,27 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Simple Login Form</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="~/Content/reset.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/structure.css" />
 
 </head>
 <body>
     <h2>@ViewBag.ThongBao</h2>
-    @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new {@class ="box login" }))
-            {
-                @Html.ValidationSummary(true)
-                <form class="box login">
-                <fieldset class="boxBody">
-                    <label>Username</label>
-                    <input name="UserAd" type="text" tabindex="1" placeholder="Username" required />
-                    <label>Password</label>
-                    <input name="PassAd" type="password" tabindex="2" placeholder="Password" required />
-                     </fieldset>
-                    <footer>
-                    <input type="submit" class="btnLogin" value="Login" tabindex="4" />
-                    </footer>
-</form>
-            }
+    @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { @class = "box login" }))
+    {
+        @Html.ValidationSummary(true)
+        <form class="box login">
+            <fieldset class="boxBody">
+                <label>Username</label>
+                <input name="UserAd" type="text" tabindex="1" placeholder="Username" required />
+                <label>Password</label>
+                <input name="PassAd" type="password" tabindex="2" placeholder="Password" required />
+            </fieldset>
+            <footer>
+                <input type="submit" class="btnLogin" value="Login" tabindex="4" />
+            </footer>
+        </form>
+    }
 </body>
 </html>

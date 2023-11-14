@@ -122,11 +122,11 @@ namespace WEBBAKERYPro.Controllers
             donhang.MaKH = kHACHHANG.MaKH;
             donhang.NgayDat = DateTime.Now;
             donhang.TongGia = (int)TingTongTien();
-            donhang.DaGiao = false;
+            donhang.MaHT = "HT1";
             donhang.TenNN = kHACHHANG.HoTen;
             donhang.DiaChiNhanHang = kHACHHANG.DiaChi;
             donhang.SDT = kHACHHANG.SDT;
-            donhang.HTThanhToan = false;
+            donhang.MaTT = "TT1";
 
             database.DONHANGs.Add(donhang);
             database.SaveChanges();

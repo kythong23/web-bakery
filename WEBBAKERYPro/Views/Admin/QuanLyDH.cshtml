@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WEBBAKERYPro.Models.DONHANG>
+
+@{
+    ViewBag.Title = "QuanLyDH";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QuanLyDH</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChiNhanHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HINHTHUCGIAOHANG.TenHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KHACHHANG.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TINHTRANGDONHANG.LoaiTT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiNhanHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HINHTHUCGIAOHANG.TenHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TINHTRANGDONHANG.LoaiTT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDH", new { id=item.MaDH }) 
+            @Html.ActionLink("Delete", "DeleteDH", new { id=item.MaDH })
+        </td>
+    </tr>
+}
+<a href="~/Views/Admin/QuanLyDH.cshtml">~/Views/Admin/QuanLyDH.cshtml</a>
+</table>

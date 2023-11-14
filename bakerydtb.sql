@@ -17,7 +17,11 @@ create table KHACHHANG (
 	MatKhau varchar (100) NOT NULL,
 	PRIMARY KEY (MaKH)
 )
-
+create table LOAISANPHAM(
+	MaLoai char(4) NOT NULL,
+	TenLoai nvarchar (100) NOT NULL,
+	PRIMARY KEY (MaLoai)
+)
 create table SANPHAM (
 	MaSP char (4) NOT NULL,
 	TenSP nvarchar (100) NOT NULL,
@@ -29,23 +33,32 @@ create table SANPHAM (
 	FOREIGN KEY (MaLoai) REFERENCES LOAISANPHAM (MaLoai)
 
 )
-create table LOAISANPHAM(
-	MaLoai char(4) NOT NULL,
-	TenLoai nvarchar (100) NOT NULL,
-	PRIMARY KEY (MaLoai)
+create table HINHTHUCGIAOHANG 
+(
+	MaHT char(3) NOT NULL,
+	TenHT nvarchar (50),
+	PRIMARY KEY (MaHT)
+)
+create table TINHTRANGDONHANG 
+(
+	MaTT char(3) NOT NULL,
+	LoaiTT nvarchar (50),
+	PRIMARY KEY (MaTT)
 )
 create table DONHANG (
 	MaDH int identity(1,1),
 	NgayDat date NOT NULL,
 	TongGia int,
-	DaGiao Bit Default 0,
 	TenNN nvarchar (100),
 	SDT char(12),
 	DiaChiNhanHang nvarchar(100) NOT NULL,
-	HTThanhToan Bit Default 0,
 	MaKH int NOT NULL,
+	MaHT char(3) NOT NULL,
+	MaTT char(3) NOT NULL,
 	PRIMARY KEY (MADH),
-	FOREIGN KEY (MaKH) REFERENCES KHACHHANG (MaKH)
+	FOREIGN KEY (MaKH) REFERENCES KHACHHANG (MaKH),
+	FOREIGN KEY (MaTT) REFERENCES TINHTRANGDONHANG (MaTT),
+	FOREIGN KEY (MaHT) REFERENCES HINHTHUCGIAOHANG (MaHT)
 )
 create table CHITIETDONHANG (
 	MaDH int NOT NULL,
@@ -130,7 +143,13 @@ VALUES ('L001', N'Sản phẩm đặc trưng'),
 ('L004',N'Bánh quy'),
 ('L005',N'Bánh mì');
 
+INSERT INTO HINHTHUCGIAOHANG 
+Values ('HT1',N'Thanh toán tại nhà'),
+		('HT2',N'Thanh toán bằng ví điện tử');
 
+INSERT INTO TINHTRANGDONHANG
+Values ('TT1',N'Chưa giao'),
+		('TT2',N'Đã giao');
 INSERT INTO DONHANG (MaDH, NgayDat, DiaChiNhanHang, HTThanhToan, MaKH)
 VALUES ('DH01', '2022-02-01', '456 XYZ Street', 1, 'KH01');
 

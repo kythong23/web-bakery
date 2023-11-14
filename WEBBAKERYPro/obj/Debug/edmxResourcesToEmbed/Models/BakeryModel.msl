@@ -27,12 +27,20 @@
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
           <ScalarProperty Name="TongGia" ColumnName="TongGia" />
-          <ScalarProperty Name="DaGiao" ColumnName="DaGiao" />
           <ScalarProperty Name="TenNN" ColumnName="TenNN" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="DiaChiNhanHang" ColumnName="DiaChiNhanHang" />
-          <ScalarProperty Name="HTThanhToan" ColumnName="HTThanhToan" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaHT" ColumnName="MaHT" />
+          <ScalarProperty Name="MaTT" ColumnName="MaTT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HINHTHUCGIAOHANGs">
+      <EntityTypeMapping TypeName="bakeryModel.HINHTHUCGIAOHANG">
+        <MappingFragment StoreEntitySet="HINHTHUCGIAOHANG">
+          <ScalarProperty Name="MaHT" ColumnName="MaHT" />
+          <ScalarProperty Name="TenHT" ColumnName="TenHT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -68,6 +76,14 @@
           <ScalarProperty Name="RateSP" ColumnName="RateSP" />
           <ScalarProperty Name="ReviewSP" ColumnName="ReviewSP" />
           <ScalarProperty Name="MotaSP" ColumnName="MotaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TINHTRANGDONHANGs">
+      <EntityTypeMapping TypeName="bakeryModel.TINHTRANGDONHANG">
+        <MappingFragment StoreEntitySet="TINHTRANGDONHANG">
+          <ScalarProperty Name="MaTT" ColumnName="MaTT" />
+          <ScalarProperty Name="LoaiTT" ColumnName="LoaiTT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

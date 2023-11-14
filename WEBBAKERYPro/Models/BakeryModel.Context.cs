@@ -28,8 +28,10 @@ namespace WEBBAKERYPro.Models
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
         public virtual DbSet<DONHANG> DONHANGs { get; set; }
+        public virtual DbSet<HINHTHUCGIAOHANG> HINHTHUCGIAOHANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<LOAISANPHAM> LOAISANPHAMs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<TINHTRANGDONHANG> TINHTRANGDONHANGs { get; set; }
     }
 }
