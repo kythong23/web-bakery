@@ -50,6 +50,7 @@ namespace WEBBAKERYPro.Controllers
                 else
                 {
                     Session["Admin"] = adminDB;
+                    Session["TenAdmin"] = adminDB.HoTen;
                     ViewBag.ThongBao = "Đăng nhập thành công";
                     return RedirectToAction("Index", "Admin");
                 }
@@ -165,6 +166,17 @@ namespace WEBBAKERYPro.Controllers
         [HttpGet]
         public ActionResult DeleteDH(int id)
         {
+            var maTT = database.DONHANGs.Where(k => k.MaTT == id).ToList();
+            database.DONHANGs.RemoveRange(maTT);
+
+            var maHT = database.DONHANGs.Where(k => k.MaHT == id).ToList();
+            database.DONHANGs.RemoveRange(maHT);
+
+            var maKH = database.DONHANGs.Where(k => k.MaKH == id).ToList();
+            database.DONHANGs.RemoveRange(maKH);
+
+            var chitiet = database.CHITIETDONHANGs.Where(k => k.MaDH == id).ToList();
+            database.CHITIETDONHANGs.RemoveRange(chitiet);
             DONHANG dh = database.DONHANGs.Find(id);
             database.DONHANGs.Remove(dh);
             database.SaveChanges();

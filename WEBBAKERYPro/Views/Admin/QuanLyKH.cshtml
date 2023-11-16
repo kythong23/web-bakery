@@ -5,11 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>QuanLyKH</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2><a href="~/Admin" style="color:black">QuanLyKH</a></h2>
 <table class="table">
     <tr>
         <th>
@@ -48,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.MatKhau)
         </td>
         <td>
-            @Html.ActionLink("Delete", "DeleteKH", new { id=item.MaKH })
+            @Html.ActionLink("Delete", "DeleteKH", new { id=item.MaKH }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }

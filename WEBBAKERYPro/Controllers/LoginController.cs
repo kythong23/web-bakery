@@ -46,7 +46,7 @@ namespace WEBBAKERYPro.Controllers
                     else
                     {
                         ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
-                        return View();
+                        return RedirectToAction("Login", "Login");
                     }
                 }
             }

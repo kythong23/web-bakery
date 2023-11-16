@@ -6,7 +6,7 @@
     KHACHHANG khach = Session["TaiKhoan"] as KHACHHANG;
 }
 
-<table>
+<table class="table">
     <thead>
         <tr>
             <th>Sản phẩm</th>
@@ -38,37 +38,38 @@
                 {
                     <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
                     <td>
-                        <input type="number" min="1" value="@sanpham.SoLuong" name="SoLuong" />
+                        @sanpham.SoLuong
                     </td>
                     <td>@sanpham.ThanhTien()</td>
-                    <td>
-                        <button type="submit" class="btn btn-outline-primary">Cập nhật</button>
-                    </td>
                 }
-                <td> @Html.ActionLink("Xóa hàng", "XoaMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }, new { @class = "btn btn-danger" })</td>
             </tr>
         }
+        <tr>
+            <td style="font-weight:bold;color:black;font-size:24px;">Tổng số lượng: @ViewBag.TongSL</td>
+            <td style="font-weight:bold;color:black;font-size:24px;">Tổng tiền: @ViewBag.TongTien</td>
+        </tr>
     </tbody>
 </table>
-<h2>THONG TIN KHACH HANG</h2>
+<h2 style="margin-left:8px;">THÔNG TIN KHÁCH HÀNG</h2>
 <table class="table table-bordered">
     <tr>
-        <td>Ho ten: </td>
+        <td>Họ tên: </td>
         <td>@khach.HoTen</td>
     </tr>
     <tr>
-        <td>Dia chi: </td>
+        <td>Địa chỉ: </td>
         <td>@khach.DiaChi</td>
     </tr>
     <tr>
-        <td>Dien thoai: </td>
+        <td>Điện thoại: </td>
         <td>@khach.SDT</td>
     </tr>
     <tr>
-        <td>Ngay dat: </td>
+        <td>Ngày đặt: </td>
         <td>@DateTime.Now.ToShortDateString()</td>
     </tr>
     <tr>
-        <td>@Html.ActionLink("Dong y dat hang", "DongYDatHang","ShoppingCart",new {@class = "btn btn-primary"})</td>
+        <td>@Html.ActionLink("Đồng ý đặt hàng", "DongYDatHang", "ShoppingCart", new { @class = "btn btn-primary" })</td>
+        <td>@Html.ActionLink("Quay lại giỏ hàng", "Index", "ShoppingCart", new { @class = "btn btn-dark" })</td>
     </tr>
 </table>

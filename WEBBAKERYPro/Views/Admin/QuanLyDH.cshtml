@@ -4,12 +4,7 @@
     ViewBag.Title = "QuanLyDH";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
-<h2>QuanLyDH</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2><a href="~/Admin" style="color:black">QuanLyDH</a></h2>
 <table class="table">
     <tr>
         <th>
@@ -66,10 +61,9 @@
             @Html.DisplayFor(modelItem => item.TINHTRANGDONHANG.LoaiTT)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditDH", new { id=item.MaDH }) 
-            @Html.ActionLink("Delete", "DeleteDH", new { id=item.MaDH })
+            @Html.ActionLink("Edit", "EditDH", new { id=item.MaDH }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Delete", "DeleteDH", new { id=item.MaDH }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }
-<a href="~/Views/Admin/QuanLyDH.cshtml">~/Views/Admin/QuanLyDH.cshtml</a>
 </table>

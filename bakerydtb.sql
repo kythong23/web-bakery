@@ -35,13 +35,13 @@ create table SANPHAM (
 )
 create table HINHTHUCGIAOHANG 
 (
-	MaHT char(3) NOT NULL,
+	MaHT int identity(1,1),
 	TenHT nvarchar (50),
 	PRIMARY KEY (MaHT)
 )
 create table TINHTRANGDONHANG 
 (
-	MaTT char(3) NOT NULL,
+	MaTT int identity(1,1),
 	LoaiTT nvarchar (50),
 	PRIMARY KEY (MaTT)
 )
@@ -53,8 +53,8 @@ create table DONHANG (
 	SDT char(12),
 	DiaChiNhanHang nvarchar(100) NOT NULL,
 	MaKH int NOT NULL,
-	MaHT char(3) NOT NULL,
-	MaTT char(3) NOT NULL,
+	MaHT int NOT NULL,
+	MaTT int NOT NULL,
 	PRIMARY KEY (MADH),
 	FOREIGN KEY (MaKH) REFERENCES KHACHHANG (MaKH),
 	FOREIGN KEY (MaTT) REFERENCES TINHTRANGDONHANG (MaTT),
@@ -144,12 +144,12 @@ VALUES ('L001', N'Sản phẩm đặc trưng'),
 ('L005',N'Bánh mì');
 
 INSERT INTO HINHTHUCGIAOHANG 
-Values ('HT1',N'Thanh toán tại nhà'),
-		('HT2',N'Thanh toán bằng ví điện tử');
+Values (N'Thanh toán tại nhà'),
+		(N'Thanh toán bằng ví điện tử');
 
 INSERT INTO TINHTRANGDONHANG
-Values ('TT1',N'Chưa giao'),
-		('TT2',N'Đã giao');
+Values (N'Chưa giao'),
+		(N'Đã giao');
 INSERT INTO DONHANG (MaDH, NgayDat, DiaChiNhanHang, HTThanhToan, MaKH)
 VALUES ('DH01', '2022-02-01', '456 XYZ Street', 1, 'KH01');
 

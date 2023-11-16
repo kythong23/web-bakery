@@ -35,14 +35,14 @@
           <Property Name="SDT" Type="char" MaxLength="12" />
           <Property Name="DiaChiNhanHang" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MaKH" Type="int" Nullable="false" />
-          <Property Name="MaHT" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="MaTT" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="MaHT" Type="int" Nullable="false" />
+          <Property Name="MaTT" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="HINHTHUCGIAOHANG">
           <Key>
             <PropertyRef Name="MaHT" />
           </Key>
-          <Property Name="MaHT" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="MaHT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenHT" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="KHACHHANG">
@@ -81,7 +81,7 @@
           <Key>
             <PropertyRef Name="MaTT" />
           </Key>
-          <Property Name="MaTT" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="MaTT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LoaiTT" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__CHITIETDON__MaDH__34C8D9D1">
@@ -227,8 +227,8 @@
           <Property Name="SDT" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="DiaChiNhanHang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaKH" Type="Int32" Nullable="false" />
-          <Property Name="MaHT" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MaTT" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaHT" Type="Int32" Nullable="false" />
+          <Property Name="MaTT" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CHITIETDONHANGs" Relationship="Self.FK__CHITIETDON__MaDH__34C8D9D1" FromRole="DONHANG" ToRole="CHITIETDONHANG" />
           <NavigationProperty Name="HINHTHUCGIAOHANG" Relationship="Self.FK__DONHANG__MaHT__31EC6D26" FromRole="DONHANG" ToRole="HINHTHUCGIAOHANG" />
           <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__DONHANG__MaKH__300424B4" FromRole="DONHANG" ToRole="KHACHHANG" />
@@ -238,7 +238,7 @@
           <Key>
             <PropertyRef Name="MaHT" />
           </Key>
-          <Property Name="MaHT" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaHT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenHT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DONHANGs" Relationship="Self.FK__DONHANG__MaHT__31EC6D26" FromRole="HINHTHUCGIAOHANG" ToRole="DONHANG" />
         </EntityType>
@@ -282,7 +282,7 @@
           <Key>
             <PropertyRef Name="MaTT" />
           </Key>
-          <Property Name="MaTT" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MaTT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LoaiTT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DONHANGs" Relationship="Self.FK__DONHANG__MaTT__30F848ED" FromRole="TINHTRANGDONHANG" ToRole="DONHANG" />
         </EntityType>

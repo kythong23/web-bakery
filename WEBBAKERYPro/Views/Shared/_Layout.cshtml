@@ -17,6 +17,13 @@
             layoutlogin.style.left = '-900px';
             layoutsignup.style.left = '0px';
         }
+        function backtologin() {
+            var layoutlogin = document.getElementById("layoutlogin");
+            var layoutsignup = document.getElementById("layoutsignup");
+            var signupButton = document.getElementById("signup");
+            layoutlogin.style.left = '0px';
+            layoutsignup.style.left = '-900px';
+        }
         function closeform() {
             document.getElementById("loginform").style.display = 'none';
             $.ajax({

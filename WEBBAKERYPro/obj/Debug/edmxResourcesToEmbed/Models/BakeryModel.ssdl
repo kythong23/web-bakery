@@ -30,14 +30,14 @@
     <Property Name="SDT" Type="char" MaxLength="12" />
     <Property Name="DiaChiNhanHang" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="MaKH" Type="int" Nullable="false" />
-    <Property Name="MaHT" Type="char" MaxLength="3" Nullable="false" />
-    <Property Name="MaTT" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="MaHT" Type="int" Nullable="false" />
+    <Property Name="MaTT" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="HINHTHUCGIAOHANG">
     <Key>
       <PropertyRef Name="MaHT" />
     </Key>
-    <Property Name="MaHT" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="MaHT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenHT" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="KHACHHANG">
@@ -76,7 +76,7 @@
     <Key>
       <PropertyRef Name="MaTT" />
     </Key>
-    <Property Name="MaTT" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="MaTT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LoaiTT" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK__CHITIETDON__MaDH__34C8D9D1">

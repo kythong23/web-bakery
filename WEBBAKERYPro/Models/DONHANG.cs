@@ -27,8 +27,8 @@ namespace WEBBAKERYPro.Models
         public string SDT { get; set; }
         public string DiaChiNhanHang { get; set; }
         public int MaKH { get; set; }
-        public string MaHT { get; set; }
-        public string MaTT { get; set; }
+        public int MaHT { get; set; }
+        public int MaTT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }

@@ -17,7 +17,7 @@
 
     #layoutsignup {
         max-width: 1400px;
-        width: 800px;
+        width: 700px;
         height: fit-content;
         position: absolute;
         top: 0;
@@ -36,11 +36,11 @@
 
     #wrapperlayout {
         max-width: 1400px;
-        width: 800px;
-        height: 550px;
+        width: 700px;
+        height: 450px;
         position: absolute;
         left: 450px;
-        top: 225px;
+        top: 125px;
         outline: none;
         background: white;
         overflow: hidden;
@@ -54,6 +54,9 @@
         height: 30px;
         border-radius: 8px;
         width: 100px;
+        position: absolute;
+        top: 171px;
+        right: 30px;
     }
 </style>
 <script>
@@ -61,7 +64,7 @@
         var layoutlogin = document.getElementById("layoutlogin");
         var layoutsignup = document.getElementById("layoutsignup");
         var signupButton = document.getElementById("signup");
-        layoutlogin.style.left = '-900px';
+        layoutlogin.style.left = '-1400px';
         layoutsignup.style.left = '0px';
     }
     //function closeform() {
@@ -87,19 +90,19 @@
                         <div class="password">
                             @Html.Password("MatKhau", null, new { @id = "password", required = "required" })
                         </div>
-                        <p>
+                        <p style="margin-top:10px;">
                             <span>
 
                             <button style="background: #468fce; color: white; font-weight: bold;height:30px;border-radius:8px;width:100px;" type="submit">Đăng nhập</button>
                             </span>
-                            <span>
+                            @*<span>
 
                             <button id="btnsignup" onclick="signup()">Đăng ký</button>
-                            </span>
+                            </span>*@
                         </p>
 
                     }
-                    @*<button id="btnsignup" onclick="signup()">Đăng ký</button>*@
+                    <button id="btnsignup" onclick="signup()">Đăng ký</button>
                 </div>
                 <div class="col-1">
                     <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>

@@ -20,7 +20,7 @@ namespace WEBBAKERYPro.Models
             this.DONHANGs = new HashSet<DONHANG>();
         }
     
-        public string MaTT { get; set; }
+        public int MaTT { get; set; }
         public string LoaiTT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

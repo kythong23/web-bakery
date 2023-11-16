@@ -4,11 +4,15 @@
     ViewBag.Title = "QuanLySP";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<style>
+    .btncreate {
+        color:black;
+    }
+</style>
+<h2 style="margin-top:20px;margin-left:20px"><a href="~/Admin" style="color:black">QuanLySP</a></h2>
 
-<h2 style="margin-top:20px;margin-left:20px">QuanLySP</h2>
-
-<p style="text-decoration: none; color: black; display: inline-block;padding: 5px; ">
-    @Html.ActionLink("Create New", "Create")
+<p class="btn btn-success" style="margin-left:10px;">
+    @Html.ActionLink("Create New", "Create", null ,new {@class = "btncreate" })
 </p>
 <table class="table">
     <tr style="border-bottom:solid">
@@ -42,7 +46,7 @@
 
         <tr>
             <td>
-                <img class="card-img-top book-picture" style="height:40px" src="~/Images/@Html.DisplayFor(modelItem => item.HinhSP)" alt="Cardimage">
+                <img class="card-img-top book-picture" style="height:80px;border-radius:10px;" src="~/Images/@Html.DisplayFor(modelItem => item.HinhSP)" alt="Cardimage">
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TenSP)
@@ -63,8 +67,8 @@
                 @Html.DisplayFor(modelItem => item.LOAISANPHAM.TenLoai)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP })
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP })
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaSP }, new {@class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaSP }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

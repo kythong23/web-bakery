@@ -101,6 +101,8 @@ namespace WEBBAKERYPro.Controllers
                 return RedirectToAction("Index");
             }
             List<MatHangMua> gioHang = LayGioHang();
+            ViewBag.TongSL = TingTongSL();
+            ViewBag.TongTien = TingTongTien();
             return View(gioHang);
         }
 
@@ -122,11 +124,11 @@ namespace WEBBAKERYPro.Controllers
             donhang.MaKH = kHACHHANG.MaKH;
             donhang.NgayDat = DateTime.Now;
             donhang.TongGia = (int)TingTongTien();
-            donhang.MaHT = "HT1";
+            donhang.MaHT = 1;
             donhang.TenNN = kHACHHANG.HoTen;
             donhang.DiaChiNhanHang = kHACHHANG.DiaChi;
             donhang.SDT = kHACHHANG.SDT;
-            donhang.MaTT = "TT1";
+            donhang.MaTT = 1;
 
             database.DONHANGs.Add(donhang);
             database.SaveChanges();

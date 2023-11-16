@@ -761,3 +761,7 @@ D:\15.11.2023\web-bakery\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CoreCompileI
 D:\15.11.2023\web-bakery\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.csproj.CopyComplete
 D:\15.11.2023\web-bakery\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.dll
 D:\15.11.2023\web-bakery\WEBBAKERYPro\obj\Debug\WEBBAKERYPro.pdb
+C:\Users\acer\Desktop\webbakerypro\web-bakery\WEBBAKERYPro\bin\PagedList.dll
+C:\Users\acer\Desktop\webbakerypro\web-bakery\WEBBAKERYPro\bin\PagedList.Mvc.dll
+C:\Users\acer\Desktop\webbakerypro\web-bakery\WEBBAKERYPro\bin\PagedList.xml
+C:\Users\acer\Desktop\webbakerypro\web-bakery\WEBBAKERYPro\bin\PagedList.Mvc.xml

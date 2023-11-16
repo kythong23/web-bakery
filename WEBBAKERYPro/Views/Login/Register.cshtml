@@ -24,21 +24,31 @@
     .col-6 input[type="text"], .col-7 input[type="password"] {
         margin-top: 3px;
     }
-
+    #btnback {
+        background: #468fce;
+        color: white;
+        font-weight: bold;
+        height: 30px;
+        border-radius: 8px;
+        width: 176px;
+        position: absolute;
+        bottom: 301px;
+        right: 24px;
+    }
 </style>
 <script>
-    function signup() {
+    function backtologin() {
         var layoutlogin = document.getElementById("layoutlogin");
         var layoutsignup = document.getElementById("layoutsignup");
         var signupButton = document.getElementById("signup");
-        layoutlogin.style.left = '-900px';
-        layoutsignup.style.left = '0px';
+        layoutlogin.style.left = '0px';
+        layoutsignup.style.left = '-900px';
     }
 </script>
 <div id="layoutsignup">
     <div class="row">
-        <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-7" height="700px" />
-        <div class="col-4">
+        <img src="~/Images/imagelogin.jpg" alt="Alternate Text" class="col-6" height="700px" />
+        <div class="col-5">
             @using (Html.BeginForm("Register", "Login"))
             {
                 @Html.ValidationSummary(true)
@@ -70,12 +80,13 @@
                 <div>
 
                     <div>
-                        <button type="submit">Đăng ký</button>
+                        <button type="submit" style="background: #468fce; color: white; font-weight: bold;height:30px;border-radius:8px;width:100px; margin-top:10px;">Đăng ký</button>
                     </div>
                     <div>
                     </div>
                 </div>
             }
+            <button id="btnback" onclick="backtologin()">Quay lại đăng nhập</button>
         </div>
         <div class="col-1">
             <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
