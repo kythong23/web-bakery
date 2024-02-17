@@ -29,6 +29,9 @@ create table SANPHAM (
 	Gia int NOT NULL,
 	HinhSP varchar (50) NOT NULL,
 	MaLoai char(4) NOT NULL,
+	RateSP float,
+	ReviewSP int,
+	MotaSP nvarchar(max),
 	PRIMARY KEY (MaSP),
 	FOREIGN KEY (MaLoai) REFERENCES LOAISANPHAM (MaLoai)
 
@@ -77,14 +80,14 @@ create table Admin
 	VaiTro varchar(30)
 )
 insert into admin values ('admin','admin123456','Le Tran Ky Nhong','ADMIN')
-Alter table SANPHAM add RateSP float;
-Alter table SANPHAM add ReviewSP int;
-Alter table SANPHAM add MotaSP nvarchar(max);
-Alter table SANPHAM drop column MotaSP;
-INSERT INTO KHACHHANG
-VALUES ('KH01', N'Nguyễn Văn A', N'123 Nguyễn Văn Chổi', N'Nam', 0901112356, 'abc@gmail.com', 'Nguyenvana123');
 
-Delete from SANPHAM
+INSERT INTO LOAISANPHAM (MaLoai, TenLoai)
+VALUES ('L001', N'Sản phẩm đặc trưng'),
+('L002',N'Bánh sinh nhật'),
+('L003',N'Bánh tươi'),
+('L004',N'Bánh quy'),
+('L005',N'Bánh mì');
+
 INSERT INTO SANPHAM 
 VALUES 
 		('SP01','Heart Shape Fruit Nut Cake','2023-09-26', 200000,'product1.jpg','L002',3.9,400,N'Chiếc bánh trái tim hình trái tim thơm ngon này chắc chắn sẽ là
@@ -135,13 +138,6 @@ VALUES
 		('SP16','Groot Fondant Cake','2023-09-26', 111399,'product16.jpg','L003',4.2,1230,N'Nhân vật hư cấu Groot của Marvel là một nhân vật đáng yêu. Vì vậy, hãy yêu mến những người 
 		thân yêu của bạn trong ngày sinh nhật của họ bằng cách tặng họ chiếc bánh I Am Groot do nhà thiết kế của chúng tôi thiết kế. Chiếc bánh được phủ một số lá kẹo mềm màu xanh 
 		lá cây và phần hoàn thiện thô để tạo ra một cái nhìn gần giống như một cái cây.');
-DELETE From LOAISANPHAM
-INSERT INTO LOAISANPHAM (MaLoai, TenLoai)
-VALUES ('L001', N'Sản phẩm đặc trưng'),
-('L002',N'Bánh sinh nhật'),
-('L003',N'Bánh tươi'),
-('L004',N'Bánh quy'),
-('L005',N'Bánh mì');
 
 INSERT INTO HINHTHUCGIAOHANG 
 Values (N'Thanh toán tại nhà'),
@@ -150,8 +146,3 @@ Values (N'Thanh toán tại nhà'),
 INSERT INTO TINHTRANGDONHANG
 Values (N'Chưa giao'),
 		(N'Đã giao');
-INSERT INTO DONHANG (MaDH, NgayDat, DiaChiNhanHang, HTThanhToan, MaKH)
-VALUES ('DH01', '2022-02-01', '456 XYZ Street', 1, 'KH01');
-
-INSERT INTO CHITIETDONHANG (MaDH, MaSP, SoLuong, ThanhTien)
-VALUES ('DH01', 'SP01', 2, 20000);
