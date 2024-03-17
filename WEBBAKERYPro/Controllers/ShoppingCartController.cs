@@ -9,87 +9,73 @@ namespace WEBBAKERYPro.Controllers
 {
     public class ShoppingCartController : Controller
     {
+        List<MatHangMua> cart = ShoppingCart.getCart();
         bakeryEntities database = new bakeryEntities();
-        public List<MatHangMua> LayGioHang() 
-        {
-            List<MatHangMua> gioHang = Session["GioHang"] as List<MatHangMua>;        
-            if (gioHang == null)
-            {
-                gioHang = new List<MatHangMua>();
-                Session["GioHang"] = gioHang;
-            }
-            return gioHang;
-        }
         public ActionResult ThemSanPhamVaoGio(string masp)
         {
-            List<MatHangMua> giohang = LayGioHang();
-            MatHangMua sanpham = giohang.FirstOrDefault(s=> s.MaBanh == masp );
+            MatHangMua sanpham = cart.FirstOrDefault(s => s.MaBanh == masp);
             if (sanpham == null)
             {
                 sanpham = new MatHangMua(masp);
-                giohang.Add(sanpham);
+                cart.Add(sanpham);
             }
             else
             {
                 sanpham.SoLuong++;
             }
             return Redirect(Request.UrlReferrer.ToString()); // Reload lai trang ma user dang su dung
-         //   return RedirectToAction("Details", "Home", new { id = masp });
         }
-        public ActionResult CapNhatMatHang(string MaSP,int soluong)
+        public ActionResult CapNhatMatHang(string MaSP, int soluong)
         {
-            List<MatHangMua> gioHang = LayGioHang();
-            var sanpham = gioHang.FirstOrDefault(s => s.MaBanh == MaSP);
+            var sanpham = cart.FirstOrDefault(s => s.MaBanh == MaSP);
             if (sanpham != null)
             {
                 sanpham.SoLuong = soluong;
             }
             return RedirectToAction("Index");
         }
-        public int TingTongSL()
+        public int TingTongSoLuong()
         {
             int tongSL = 0;
-            List<MatHangMua> gioHang = LayGioHang();
-            if (gioHang != null)
-                tongSL = gioHang.Sum(sp => sp.SoLuong);
+            if (cart != null)
+                tongSL = cart.Sum(sp => sp.SoLuong);
             return tongSL;
         }
         public double TingTongTien()
         {
-            double TongTien = 0;
-            List<MatHangMua> gioHang = LayGioHang();
-            if (gioHang != null)
-                TongTien = gioHang.Sum(sp => sp.ThanhTien());
+            double TongTien = 0; ;
+            if (cart != null)
+                TongTien = cart.Sum(sp => sp.ThanhTien());
             return TongTien;
         }
-        public ActionResult XoaMatHang(string MaSP) {
-            List<MatHangMua> gioHang = LayGioHang();
-            var sanpham = gioHang.FirstOrDefault(s => s.MaBanh == MaSP);
-            if(sanpham != null)
+        public ActionResult XoaMatHang(string MaSP)
+        {
+            var sanpham = cart.FirstOrDefault(s => s.MaBanh == MaSP);
+            if (sanpham != null)
             {
-                gioHang.RemoveAll(s => s.MaBanh == MaSP);
+                cart.RemoveAll(s => s.MaBanh == MaSP);
                 return RedirectToAction("Index");
             }
-            if(gioHang.Count == 0)
+            if (cart.Count == 0)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
         }
         public ActionResult Index()
         {
-            List<MatHangMua> gioHang = LayGioHang();
-            if(gioHang == null || gioHang.Count == 0)
+            if (cart == null || cart.Count == 0)
             {
-                return RedirectToAction("Index","Home");
+                ViewBag.CheckGioHang = cart.Count;
+                return View("Index");
             }
-            ViewBag.TongSL = TingTongSL();
+            ViewBag.TongSL = TingTongSoLuong();
             ViewBag.TongTien = TingTongTien();
-            return View(gioHang);
+            return View(cart);
         }
         public ActionResult GioHangPartial()
         {
-            ViewBag.TongSL = TingTongSL();
+            ViewBag.TongSL = TingTongSoLuong();
             ViewBag.TongTien = TingTongTien();
             return PartialView();
         }
@@ -97,13 +83,12 @@ namespace WEBBAKERYPro.Controllers
         {
             if (Session["TaiKhoan"] == null)
             {
-                Session["DangNhap"] = "chuadangnhap" ;
+                Session["DangNhap"] = "chuadangnhap";
                 return RedirectToAction("Index");
             }
-            List<MatHangMua> gioHang = LayGioHang();
-            ViewBag.TongSL = TingTongSL();
+            ViewBag.TongSL = TingTongSoLuong();
             ViewBag.TongTien = TingTongTien();
-            return View(gioHang);
+            return View(cart);
         }
 
         public ActionResult DatHangThanhCong()
@@ -118,7 +103,7 @@ namespace WEBBAKERYPro.Controllers
         public ActionResult DongYDatHang()
         {
             KHACHHANG kHACHHANG = Session["TaiKhoan"] as KHACHHANG;
-            List<MatHangMua> giohang = LayGioHang();
+            List<MatHangMua> giohang = cart;
 
             DONHANG donhang = new DONHANG();
             donhang.MaKH = kHACHHANG.MaKH;
@@ -129,7 +114,6 @@ namespace WEBBAKERYPro.Controllers
             donhang.DiaChiNhanHang = kHACHHANG.DiaChi;
             donhang.SDT = kHACHHANG.SDT;
             donhang.MaTT = 1;
-
             database.DONHANGs.Add(donhang);
             database.SaveChanges();
 
@@ -147,5 +131,5 @@ namespace WEBBAKERYPro.Controllers
             Session["GioHang"] = null;
             return RedirectToAction("DatHangThanhCong");
         }
-    } 
+    }
 }
