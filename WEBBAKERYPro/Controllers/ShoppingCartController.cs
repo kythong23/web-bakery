@@ -58,7 +58,7 @@ namespace WEBBAKERYPro.Controllers
             }
             if (cart.Count == 0)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
             return RedirectToAction("Index");
         }
@@ -67,7 +67,7 @@ namespace WEBBAKERYPro.Controllers
             if (cart == null || cart.Count == 0)
             {
                 ViewBag.CheckGioHang = cart.Count;
-                return View("Index");
+                return RedirectToAction("Index","Home");
             }
             ViewBag.TongSL = TingTongSoLuong();
             ViewBag.TongTien = TingTongTien();
