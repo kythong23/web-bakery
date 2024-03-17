@@ -21,61 +21,82 @@
     img {
         border-radius: 5px;
     }
+
+    .col-12#emptycart {
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        margin-top: 78px;
+    }
 </style>
 <hr />
 <h2>Thông tin giỏ hàng</h2>
-<div class="row">
-    <div class="col-9">
-        <table>
-            <thead>
-                <tr>
-                    <th>Sản phẩm</th>
-                    <th>Đơn giá</th>
-                    <th>Số lượng</th>
-                    <th>Thành tiền</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var sanpham in Model)
-                {
+<div class="row" style="height:320px;">
+    @if (ViewBag.CheckGioHang == 0)
+    {
+        <div class="col-12" id="emptycart">
+            <div>
+                <div>Hông có gì trong giỏ hàng hết</div>
+                <div>Quay lại và chọn cho mình một chiếc bánh nào!</div>
+                <div>@Html.ActionLink("Đi lựa bánh thôi", "Index", "Home",null, new { @class = "btn btn-danger" })</div>
+            </div>
+        </div>
+    }
+    else
+    {
+
+        <div class="col-9">
+            <table>
+                <thead>
                     <tr>
-                        <td id="sanpham">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})">
-                                            <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <h6>@sanpham.TenBanh</h6>
-                                        <div>@sanpham.MaBanh</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        @using (Html.BeginForm("CapNhatMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }))
-                        {
-                            <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
-                            <td>
-                                <input type="number" min="1" value="@sanpham.SoLuong" name="SoLuong" />
-                            </td>
-                            <td>@sanpham.ThanhTien()</td>
-                            <td>
-                                <button type="submit" class="btn btn-outline-primary">Cập nhật</button>
-                            </td>
-                        }
-                        <td> @Html.ActionLink("Xóa hàng", "XoaMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }, new { @class = "btn btn-danger" })</td>
+                        <th>Sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-    <div class="col-3">
-        <h3 style=" background: #f8f5f0;max-width:300px;padding:8px;">Tổng kết đơn hàng</h3>
-        <div colspan="5">Tổng số lượng: @ViewBag.TongSL</div>
-        <div colspan="1">Tổng tiền: @ViewBag.TongTien</div>
-        <div>@Html.ActionLink("Đặt hàng", "DatHang", "ShoppingCart", new { @class = "btn btn-success" })</div>
-    </div>
+                </thead>
+                <tbody>
+                    @foreach (var sanpham in Model)
+                    {
+                        <tr>
+                            <td id="sanpham">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})">
+                                                <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <h6>@sanpham.TenBanh</h6>
+                                            <div>@sanpham.MaBanh</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            @using (Html.BeginForm("CapNhatMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }))
+                            {
+                                <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
+                                <td>
+                                    <input type="number" min="1" value="@sanpham.SoLuong" name="SoLuong" />
+                                </td>
+                                <td>@sanpham.ThanhTien()</td>
+                                <td>
+                                    <button type="submit" class="btn btn-outline-primary">Cập nhật</button>
+                                </td>
+                            }
+                            <td> @Html.ActionLink("Xóa hàng", "XoaMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }, new { @class = "btn btn-danger" })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3">
+            <h3 style=" background: #f8f5f0;max-width:300px;padding:8px;">Tổng kết đơn hàng</h3>
+            <div colspan="5">Tổng số lượng: @ViewBag.TongSL</div>
+            <div colspan="1">Tổng tiền: @ViewBag.TongTien</div>
+            <div>@Html.ActionLink("Đặt hàng", "DatHang", "ShoppingCart", new { @class = "btn btn-success" })</div>
+        </div>
+    }
 </div>
 

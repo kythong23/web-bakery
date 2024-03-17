@@ -46,7 +46,7 @@ namespace WEBBAKERYPro.Controllers
             }
             return RedirectToAction("Index");
         }
-        public int TingTongSL()
+        public int TingTongSoLuong()
         {
             int tongSL = 0;
             List<MatHangMua> gioHang = LayGioHang();
@@ -72,7 +72,7 @@ namespace WEBBAKERYPro.Controllers
             }
             if(gioHang.Count == 0)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
         }
@@ -81,15 +81,16 @@ namespace WEBBAKERYPro.Controllers
             List<MatHangMua> gioHang = LayGioHang();
             if(gioHang == null || gioHang.Count == 0)
             {
-                return RedirectToAction("Index","Home");
+                ViewBag.CheckGioHang = gioHang.Count;
+                return View("Index");
             }
-            ViewBag.TongSL = TingTongSL();
+            ViewBag.TongSL = TingTongSoLuong();
             ViewBag.TongTien = TingTongTien();
             return View(gioHang);
         }
         public ActionResult GioHangPartial()
         {
-            ViewBag.TongSL = TingTongSL();
+            ViewBag.TongSL = TingTongSoLuong();
             ViewBag.TongTien = TingTongTien();
             return PartialView();
         }
@@ -101,7 +102,7 @@ namespace WEBBAKERYPro.Controllers
                 return RedirectToAction("Index");
             }
             List<MatHangMua> gioHang = LayGioHang();
-            ViewBag.TongSL = TingTongSL();
+            ViewBag.TongSL = TingTongSoLuong();
             ViewBag.TongTien = TingTongTien();
             return View(gioHang);
         }
