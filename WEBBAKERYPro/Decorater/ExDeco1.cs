@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using WEBBAKERYPro.Models;
+
+namespace WEBBAKERYPro.Decorater
+{
+    class ExDeco1 : AbstractDecorator
+    {
+        public override void DatBanh(CHITIETDONHANG ct,ref SANPHAMDIKEM spk,ref bakeryEntities dtb)
+        {
+            base.DatBanh(ct,ref spk,ref dtb);
+            AddSet(ct,ref spk,ref dtb);
+        }
+        public void AddSet(CHITIETDONHANG ct,ref SANPHAMDIKEM spk,ref bakeryEntities dtb)
+        {
+            spk.MACTDH = ct.MACTDH;
+            spk.MaCTSPK = 1;
+            dtb.SANPHAMDIKEMs.Add(spk);
+        }
+    }
+}

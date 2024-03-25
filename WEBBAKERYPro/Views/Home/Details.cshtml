@@ -89,6 +89,8 @@
 </script>
 @{
     string img = System.IO.Path.GetFileNameWithoutExtension(Model.HinhSP);
+    List<SelectListItem> checkboxes = ViewBag.listAccessory;
+    int i = 0;
 }
 <h1 style="margin:20px;">Thông tin chi tiết sản phẩm</h1>
 <div class="container">
@@ -98,13 +100,13 @@
                 <img src="~/Images/imgdetails/@img-a.jpg" alt="Alternate Text" width="100px" height="100px" />
             </div>
             <div class="smallimg">
-                <img src="~/Images/imgdetails/@img-b.jpg" alt="Alternate Text" width="100px" height="100px"/>
+                <img src="~/Images/imgdetails/@img-b.jpg" alt="Alternate Text" width="100px" height="100px" />
             </div>
             <div class="smallimg">
-                <img src="~/Images/imgdetails/@img-c.jpg" alt="Alternate Text" width="100px" height="100px"/>
+                <img src="~/Images/imgdetails/@img-c.jpg" alt="Alternate Text" width="100px" height="100px" />
             </div>
             <div class="smallimg">
-                <img src="~/Images/imgdetails/@img-d.jpg" alt="Alternate Text" width="100px" height="100px"/>
+                <img src="~/Images/imgdetails/@img-d.jpg" alt="Alternate Text" width="100px" height="100px" />
             </div>
         </div>
         <div class="col-6"><img src="~/Images/@Model.HinhSP" alt="Alternate Text" width="490px" height="430px;" /></div>
@@ -131,12 +133,30 @@
                     <h4>Địa chỉ giao hàng</h4>
                     <i class="fa-sharp fa-solid fa-location-dot"></i>
                     <input type="text" name="name" value="" placeholder="Địa chỉ" class="inputform" />
+                    <h4>Các phụ kiện đi kèm</h4>
+                    @using (Html.BeginForm("ThemSanPhamVaoGio", "ShoppingCart", FormMethod.Post))
+                    {
+                        @Html.HiddenFor(model => Model.MaSP, new { name = "MASP" })
+                <div>
+                    @foreach (var item in checkboxes)
+                    {
+                        <div>
+                            @Html.CheckBox("selectedItems["+i+"]", item.Selected)
+                            <label for="@item.Value">@item.Text</label>
+                        </div>
+                        i++;
+                    }
+                </div>
+                        <div class="wrapperbutton">
+                            <button style="background: white; color: #ff5f5d;font-weight:bold;" type="submit">Thêm vào giỏ hàng</button>
+                            <button style="background: #ff5f5d; color: white; font-weight: bold;">Thanh toán</button>
+                        </div>
+                    }
                 </div>
                 <div class="wrapperbutton">
-                    <a href="@Url.Action("ThemSanPhamVaoGio","ShoppingCart", new {MaSP = Model.MaSP})">
-                        <button style="background: white; color: #ff5f5d;font-weight:bold;">Thêm vào giỏ hàng</button>
-                    </a>
-                    <button style="background: #ff5f5d; color: white; font-weight: bold;">Thanh toán</button>
+                    @*<a href="@Url.Action("ThemSanPhamVaoGio","ShoppingCart", new {MaSP = Model.MaSP})">
+                            <button style="background: white; color: #ff5f5d;font-weight:bold;">Thêm vào giỏ hàng</button>
+                        </a>*@
                 </div>
                 <div class="prod-seperator"></div>
                 <h2>Mô tả sản phẩm</h2>

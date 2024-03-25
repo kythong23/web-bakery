@@ -1,69 +1,101 @@
 ﻿@model IEnumerable<WEBBAKERYPro.Models.DONHANG>
-
+@using WEBBAKERYPro.Models;
 @{
     ViewBag.Title = "QuanLyDH";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<h2><a href="~/Admin" style="color:black">QuanLyDH</a></h2>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NgayDat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TongGia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TenNN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SDT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DiaChiNhanHang)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HINHTHUCGIAOHANG.TenHT)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KHACHHANG.HoTen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TINHTRANGDONHANG.LoaiTT)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayDat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TongGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenNN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SDT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChiNhanHang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HINHTHUCGIAOHANG.TenHT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TINHTRANGDONHANG.LoaiTT)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditDH", new { id=item.MaDH }, new { @class = "btn btn-primary" }) 
-            @Html.ActionLink("Delete", "DeleteDH", new { id=item.MaDH }, new { @class = "btn btn-danger" })
-        </td>
-    </tr>
+<style>
+    #quanlydh {
+        padding: 18px;
+    }
+</style>
+@{
+    bakeryEntities database = new bakeryEntities();
 }
-</table>
+<h2><a href="~/Admin" style="color:black">QuanLyDH</a></h2>
+<div id="quanlydh">
+
+    <table class="table" style="border:1px solid">
+        <tr>
+            <th>
+                Ngày Đặt
+            </th>
+            <th>
+                Tổng Giá
+            </th>
+            <th>
+                Tên người nhận
+            </th>
+            <th>
+                SĐT
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Hình thức giao hàng
+            </th>
+            <th>
+                Họ tên khách hàng
+            </th>
+            <th>
+                Loại thanh toán
+            </th>
+            <th>
+                Các phụ kiện đi kèm
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            CHITIETDONHANG CTDH = database.CHITIETDONHANGs.FirstOrDefault(od => od.MaDH == item.MaDH);
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TongGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChiNhanHang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HINHTHUCGIAOHANG.TenHT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TINHTRANGDONHANG.LoaiTT)
+                </td>
+                <td>
+                    @if (CTDH.MASPK != 0)
+                    {
+                        <div>
+                            Có sản phẩm đi kèm
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            Không có sản phẩm đi kèm
+                        </div>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "DetailsDH", new { id = item.MaDH }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Edit", "EditDH", new { id = item.MaDH }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Delete", "DeleteDH", new { id = item.MaDH }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

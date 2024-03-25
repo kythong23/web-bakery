@@ -95,8 +95,8 @@
                         <span class="RatePro">
                             @SANPHAM.RateSP <i class="fa-solid fa-star"></i>
                         </span>
-                        <a href="@Url.Action("ThemSanPhamVaoGio","ShoppingCart", new {MaSP = SANPHAM.MaSP})"
-                           class="btn btn-primary" style="margin-left:10px;">Thêm vào giỏ hàng</a>
+                        <a href="@Url.Action("Details","Home", new {id = SANPHAM.MaSP})"
+                           class="btn btn-primary" style="margin-left:10px;">Xem chi tiết sản phẩm</a>
                     </p>
                 </div>
             </div>

@@ -1,18 +1,21 @@
-﻿using System;
+﻿using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WEBBAKERYPro.Decorater;
 using WEBBAKERYPro.Models;
 
 namespace WEBBAKERYPro.Controllers
 {
+
     public class ShoppingCartController : Controller
     {
         bakeryEntities database = new bakeryEntities();
-        public List<MatHangMua> LayGioHang() 
+        public List<MatHangMua> LayGioHang()
         {
-            List<MatHangMua> gioHang = Session["GioHang"] as List<MatHangMua>;        
+            List<MatHangMua> gioHang = Session["GioHang"] as List<MatHangMua>;
             if (gioHang == null)
             {
                 gioHang = new List<MatHangMua>();
@@ -20,13 +23,15 @@ namespace WEBBAKERYPro.Controllers
             }
             return gioHang;
         }
-        public ActionResult ThemSanPhamVaoGio(string masp)
+        [HttpPost]
+        public ActionResult ThemSanPhamVaoGio(string MASP, bool[] selectedItems)
         {
+            Session["sanphamkem"] = selectedItems;
             List<MatHangMua> giohang = LayGioHang();
-            MatHangMua sanpham = giohang.FirstOrDefault(s=> s.MaBanh == masp );
+            MatHangMua sanpham = giohang.FirstOrDefault(s => s.MaBanh == MASP);
             if (sanpham == null)
             {
-                sanpham = new MatHangMua(masp);
+                sanpham = new MatHangMua(MASP);
                 giohang.Add(sanpham);
             }
             else
@@ -34,9 +39,9 @@ namespace WEBBAKERYPro.Controllers
                 sanpham.SoLuong++;
             }
             return Redirect(Request.UrlReferrer.ToString()); // Reload lai trang ma user dang su dung
-         //   return RedirectToAction("Details", "Home", new { id = masp });
+            //return RedirectToAction("Details", "Home", new { id = masp });
         }
-        public ActionResult CapNhatMatHang(string MaSP,int soluong)
+        public ActionResult CapNhatMatHang(string MaSP, int soluong)
         {
             List<MatHangMua> gioHang = LayGioHang();
             var sanpham = gioHang.FirstOrDefault(s => s.MaBanh == MaSP);
@@ -62,15 +67,16 @@ namespace WEBBAKERYPro.Controllers
                 TongTien = gioHang.Sum(sp => sp.ThanhTien());
             return TongTien;
         }
-        public ActionResult XoaMatHang(string MaSP) {
+        public ActionResult XoaMatHang(string MaSP)
+        {
             List<MatHangMua> gioHang = LayGioHang();
             var sanpham = gioHang.FirstOrDefault(s => s.MaBanh == MaSP);
-            if(sanpham != null)
+            if (sanpham != null)
             {
                 gioHang.RemoveAll(s => s.MaBanh == MaSP);
                 return RedirectToAction("Index");
             }
-            if(gioHang.Count == 0)
+            if (gioHang.Count == 0)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -79,9 +85,9 @@ namespace WEBBAKERYPro.Controllers
         public ActionResult Index()
         {
             List<MatHangMua> gioHang = LayGioHang();
-            if(gioHang == null || gioHang.Count == 0)
+            if (gioHang == null || gioHang.Count == 0)
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.TongSL = TingTongSL();
             ViewBag.TongTien = TingTongTien();
@@ -97,7 +103,7 @@ namespace WEBBAKERYPro.Controllers
         {
             if (Session["TaiKhoan"] == null)
             {
-                Session["DangNhap"] = "chuadangnhap" ;
+                Session["DangNhap"] = "chuadangnhap";
                 return RedirectToAction("Index");
             }
             List<MatHangMua> gioHang = LayGioHang();
@@ -118,7 +124,6 @@ namespace WEBBAKERYPro.Controllers
         public ActionResult DongYDatHang()
         {
             KHACHHANG kHACHHANG = Session["TaiKhoan"] as KHACHHANG;
-            List<MatHangMua> giohang = LayGioHang();
 
             DONHANG donhang = new DONHANG();
             donhang.MaKH = kHACHHANG.MaKH;
@@ -129,10 +134,17 @@ namespace WEBBAKERYPro.Controllers
             donhang.DiaChiNhanHang = kHACHHANG.DiaChi;
             donhang.SDT = kHACHHANG.SDT;
             donhang.MaTT = 1;
-
             database.DONHANGs.Add(donhang);
             database.SaveChanges();
-
+            ThemChiTietSanPham(donhang);
+            Session["GioHang"] = null;
+            return RedirectToAction("DatHangThanhCong");
+        }
+        public void ThemChiTietSanPham(DONHANG donhang)
+        {
+            List<int> arr = new List<int>();
+            bool[] bools = Session["sanphamkem"] as bool[];
+            List<MatHangMua> giohang = LayGioHang();
             foreach (var sanpham in giohang)
             {
                 CHITIETDONHANG chitiet = new CHITIETDONHANG();
@@ -140,12 +152,79 @@ namespace WEBBAKERYPro.Controllers
                 chitiet.MaSP = sanpham.MaBanh;
                 chitiet.SoLuong = sanpham.SoLuong;
                 chitiet.ThanhTien = (int)sanpham.GiaBanh;
-                database.CHITIETDONHANGs.Add(chitiet);
+                for (int i = 0; i < bools.Count(); i++)
+                {
+                    if (bools[i] == true)
+                        arr.Add(i);
 
+                }
+                if(arr.Count==0)
+                    chitiet.MASPK = 0;
+                else
+                    chitiet.MASPK = 1;
+                DecorateCake(arr, ref chitiet, ref database);
+                database.CHITIETDONHANGs.Add(chitiet);
             }
             database.SaveChanges();
-            Session["GioHang"] = null;
-            return RedirectToAction("DatHangThanhCong");
         }
-    } 
+        public void DecorateCake(List<int> i, ref CHITIETDONHANG ct, ref bakeryEntities dtb)
+        {
+            SANPHAMDIKEM spk = new SANPHAMDIKEM();
+            Banh banh = new Banh();
+            AbstractDecorator deco1 = new ExDeco1();
+            AbstractDecorator deco2 = new ExDeco2();
+            AbstractDecorator deco3 = new ExDeco3();
+            if (i.Count() == 1)
+            {
+                if (i[0] == 0)
+                {
+                    deco1.SetComponent(banh);
+                    deco1.DatBanh(ct, ref spk, ref dtb);
+                }
+                if (i[0] == 1)
+                {
+                    deco2.SetComponent(banh);
+                    deco2.DatBanh(ct, ref spk,ref dtb);
+                }
+                if (i[0] == 2)
+                {
+                    deco3.SetComponent(banh);
+                    deco3.DatBanh(ct, ref spk,ref dtb);
+                }
+            }
+            else if (i.Count() == 2)
+            {
+                if (i[0] == 0 && i[1] == 1)
+                {
+                    deco1.SetComponent(banh);
+                    deco1.DatBanh(ct, ref spk,ref dtb);
+                    deco2.SetComponent(deco1);
+                    deco2.DatBanh(ct, ref spk,ref dtb);
+                }
+                else if (i[0] == 0 && i[1] == 2)
+                {
+                    deco2.SetComponent(banh);
+                    deco2.DatBanh(ct, ref spk,ref dtb);
+                    deco3.SetComponent(deco2);
+                    deco3.DatBanh(ct, ref spk,ref dtb);
+                }
+                else
+                {
+                    deco1.SetComponent(banh);
+                    deco1.DatBanh(ct, ref spk,ref dtb);
+                    deco3.SetComponent(deco1);
+                    deco3.DatBanh(ct, ref spk,ref dtb);
+                }
+            }
+            else
+            {
+                deco1.SetComponent(banh);
+                deco1.DatBanh(ct, ref spk,ref dtb);
+                deco2.SetComponent(deco1);
+                deco2.DatBanh(ct, ref spk, ref dtb);
+                deco3.SetComponent(deco2);
+                deco3.DatBanh(ct, ref spk, ref dtb);
+            }
+        }
+    }
 }

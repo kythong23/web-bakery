@@ -9,13 +9,22 @@
     <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
     <Property Name="VaiTro" Type="varchar" MaxLength="30" />
   </EntityType>
+  <EntityType Name="CHITIETDIKEM">
+    <Key>
+      <PropertyRef Name="MACTSPK" />
+    </Key>
+    <Property Name="MACTSPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSPK" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Soluong" Type="int" />
+  </EntityType>
   <EntityType Name="CHITIETDONHANG">
     <Key>
-      <PropertyRef Name="MaDH" />
-      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="MACTDH" />
     </Key>
+    <Property Name="MACTDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaDH" Type="int" Nullable="false" />
     <Property Name="MaSP" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="MASPK" Type="int" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="ThanhTien" Type="int" Nullable="false" />
   </EntityType>
@@ -72,6 +81,14 @@
     <Property Name="ReviewSP" Type="int" />
     <Property Name="MotaSP" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="SANPHAMDIKEM">
+    <Key>
+      <PropertyRef Name="MASPK" />
+    </Key>
+    <Property Name="MASPK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaCTSPK" Type="int" />
+    <Property Name="MACTDH" Type="int" />
+  </EntityType>
   <EntityType Name="TINHTRANGDONHANG">
     <Key>
       <PropertyRef Name="MaTT" />
@@ -79,7 +96,7 @@
     <Property Name="MaTT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LoaiTT" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__CHITIETDON__MaDH__34C8D9D1">
+  <Association Name="FK__CHITIETDON__MaDH__36B12243">
     <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
     <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -91,7 +108,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CHITIETDON__MaSP__35BCFE0A">
+  <Association Name="FK__CHITIETDON__MaSP__37A5467C">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -151,20 +168,46 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__SANPHAMDI__MACTD__3A81B327">
+    <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="0..1" />
+    <End Role="SANPHAMDIKEM" Type="Self.SANPHAMDIKEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHITIETDONHANG">
+        <PropertyRef Name="MACTDH" />
+      </Principal>
+      <Dependent Role="SANPHAMDIKEM">
+        <PropertyRef Name="MACTDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SANPHAMDI__MaCTS__3B75D760">
+    <End Role="CHITIETDIKEM" Type="Self.CHITIETDIKEM" Multiplicity="0..1" />
+    <End Role="SANPHAMDIKEM" Type="Self.SANPHAMDIKEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHITIETDIKEM">
+        <PropertyRef Name="MACTSPK" />
+      </Principal>
+      <Dependent Role="SANPHAMDIKEM">
+        <PropertyRef Name="MaCTSPK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="bakeryModelStoreContainer">
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETDIKEM" EntityType="Self.CHITIETDIKEM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHITIETDONHANG" EntityType="Self.CHITIETDONHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HINHTHUCGIAOHANG" EntityType="Self.HINHTHUCGIAOHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAISANPHAM" EntityType="Self.LOAISANPHAM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANPHAMDIKEM" EntityType="Self.SANPHAMDIKEM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TINHTRANGDONHANG" EntityType="Self.TINHTRANGDONHANG" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__CHITIETDON__MaDH__34C8D9D1" Association="Self.FK__CHITIETDON__MaDH__34C8D9D1">
+    <AssociationSet Name="FK__CHITIETDON__MaDH__36B12243" Association="Self.FK__CHITIETDON__MaDH__36B12243">
       <End Role="DONHANG" EntitySet="DONHANG" />
       <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CHITIETDON__MaSP__35BCFE0A" Association="Self.FK__CHITIETDON__MaSP__35BCFE0A">
+    <AssociationSet Name="FK__CHITIETDON__MaSP__37A5467C" Association="Self.FK__CHITIETDON__MaSP__37A5467C">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
     </AssociationSet>
@@ -183,6 +226,14 @@
     <AssociationSet Name="FK__SANPHAM__MaLoai__29572725" Association="Self.FK__SANPHAM__MaLoai__29572725">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SANPHAMDI__MACTD__3A81B327" Association="Self.FK__SANPHAMDI__MACTD__3A81B327">
+      <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
+      <End Role="SANPHAMDIKEM" EntitySet="SANPHAMDIKEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SANPHAMDI__MaCTS__3B75D760" Association="Self.FK__SANPHAMDI__MaCTS__3B75D760">
+      <End Role="CHITIETDIKEM" EntitySet="CHITIETDIKEM" />
+      <End Role="SANPHAMDIKEM" EntitySet="SANPHAMDIKEM" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
