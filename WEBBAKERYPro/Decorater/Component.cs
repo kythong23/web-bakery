@@ -8,6 +8,6 @@ namespace WEBBAKERYPro.Decorater
 {
     abstract class Component
     {
-       public abstract void DatBanh(CHITIETDONHANG ct,ref SANPHAMDIKEM spk,ref bakeryEntities dtb);
+       public abstract void DatBanh(CHITIETDONHANG ct,ref bakeryEntities dtb,ref int a);
     }
 }

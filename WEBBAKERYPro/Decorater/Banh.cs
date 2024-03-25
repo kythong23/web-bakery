@@ -8,8 +8,9 @@ namespace WEBBAKERYPro.Decorater
 {
     class Banh : Component
     {
-        public override void DatBanh(CHITIETDONHANG ct,ref SANPHAMDIKEM spk,ref bakeryEntities dtb)
+        public override void DatBanh(CHITIETDONHANG ct,ref bakeryEntities dtb,ref int a)
         {
+
         }
     }
 }

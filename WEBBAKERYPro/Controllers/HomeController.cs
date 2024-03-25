@@ -95,16 +95,6 @@ namespace WEBBAKERYPro.Controllers
             }
             return listAccessory;
         }
-        //Gộp vào chung với index để có thể phân trang cho sản phẩm theo cate
-        /*   public ActionResult SPTheoLoai(string id, int? page)
-           {
-               int pageSize = 4;
-               int pageNum = (page ?? 1);
-               var dsSP = LaySanPham(16);
-               var dsSanPham = database.SANPHAMs.ToList();
-               var dsSPTheoLoai = database.SANPHAMs.Where(a => a.MaLoai == id ).ToList();
-               return View("Index",dsSPTheoLoai.ToPagedList(pageNum,pageSize));
-           }*/
         public ActionResult Logout(int? page)
         {
             int pageSize = 6; // số lượng sản phẩm trong 1 trang

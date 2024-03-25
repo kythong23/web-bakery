@@ -8,16 +8,16 @@ namespace WEBBAKERYPro.Decorater
 {
     abstract class AbstractDecorator : Component
     {
-        private Component c; 
+        protected Component c; 
         public void SetComponent(Component com)
         {
             c=com;
         }
-        public override void DatBanh(CHITIETDONHANG ct,ref SANPHAMDIKEM spk,ref bakeryEntities dtb)
+        public override void DatBanh(CHITIETDONHANG ct,ref bakeryEntities dtb, ref int a)
         {
             if (c != null)
             {
-                c.DatBanh(ct, ref spk,ref dtb);
+                c.DatBanh(ct,ref dtb,ref a);
             }
         }
     }

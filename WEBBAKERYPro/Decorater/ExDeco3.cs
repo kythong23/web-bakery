@@ -8,13 +8,19 @@ namespace WEBBAKERYPro.Decorater
 {
     class ExDeco3 : AbstractDecorator
     {
-        public override void DatBanh(CHITIETDONHANG ct,ref SANPHAMDIKEM spk,ref bakeryEntities dtb)
+        public override void DatBanh(CHITIETDONHANG ct, ref bakeryEntities dtb, ref int a)
         {
-            base.DatBanh(ct,ref spk,ref dtb);
-            AddCandle(ct,ref spk,ref dtb);
+            if (a == 2)
+            {
+                base.DatBanh(ct, ref dtb, ref a);
+                AddCandle(ct, ref dtb);
+                a++;
+            }
         }
-        public void AddCandle(CHITIETDONHANG ct,ref SANPHAMDIKEM spk,ref bakeryEntities dtb)
+        public void AddCandle(CHITIETDONHANG ct, ref bakeryEntities dtb)
         {
+
+            SANPHAMDIKEM spk = new SANPHAMDIKEM();
             spk.MACTDH = ct.MACTDH;
             spk.MaCTSPK = 3;
             dtb.SANPHAMDIKEMs.Add(spk);
