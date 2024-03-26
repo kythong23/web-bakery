@@ -13,11 +13,11 @@ namespace WEBBAKERYPro.Decorater
         {
             c=com;
         }
-        public override void DatBanh(CHITIETDONHANG ct,ref bakeryEntities dtb, ref int a)
+        public override void DatBanh(ref CHITIETDONHANG ct,ref bakeryEntities dtb, DONHANG donhang, MatHangMua sanpham, bool[] bools, ref List<int> arr)
         {
             if (c != null)
             {
-                c.DatBanh(ct,ref dtb,ref a);
+                c.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref arr);
             }
         }
     }

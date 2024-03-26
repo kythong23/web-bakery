@@ -142,6 +142,11 @@ namespace WEBBAKERYPro.Controllers
             var lstDonHang = database.DONHANGs.ToList();
             return View(lstDonHang);
         }
+        public ActionResult DetailsDH(int id) 
+        {
+            var ctdh = database.CHITIETDONHANGs.Where(s => s.MaDH == id).ToList();
+            return View(ctdh); 
+        }
         [HttpGet]
         public ActionResult EditDH (int id)
         {

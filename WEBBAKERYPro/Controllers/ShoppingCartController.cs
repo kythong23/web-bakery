@@ -148,29 +148,21 @@ namespace WEBBAKERYPro.Controllers
             foreach (var sanpham in giohang)
             {
                 CHITIETDONHANG chitiet = new CHITIETDONHANG();
-                chitiet.MaDH = donhang.MaDH;
-                chitiet.MaSP = sanpham.MaBanh;
-                chitiet.SoLuong = sanpham.SoLuong;
-                chitiet.ThanhTien = (int)sanpham.GiaBanh;
-                for (int i = 0; i < bools.Count(); i++)
-                {
-                    if (bools[i] == true)
-                        arr.Add(i);
-
-                }
-                if(arr.Count==0)
+                Banh banh = new Banh();
+                banh.DatBanh(ref chitiet, ref database, donhang, sanpham, bools, ref arr);
+                if (arr.Count == 0)
                     chitiet.MASPK = 0;
                 else
+                {
                     chitiet.MASPK = 1;
-                DecorateCake(arr, ref chitiet, ref database);
+                    DecorateCake(ref arr, ref chitiet, ref database, banh, donhang, sanpham, bools);
+                }
                 database.CHITIETDONHANGs.Add(chitiet);
+                database.SaveChanges();
             }
-            database.SaveChanges();
         }
-        public void DecorateCake(List<int> i, ref CHITIETDONHANG ct, ref bakeryEntities dtb)
+        public void DecorateCake(ref List<int> i, ref CHITIETDONHANG ct, ref bakeryEntities dtb, Banh b, DONHANG donhang, MatHangMua sanpham, bool[] bools)
         {
-            int decorator = 0;
-            Banh banh = new Banh();
             AbstractDecorator deco1 = new ExDeco1();
             AbstractDecorator deco2 = new ExDeco2();
             AbstractDecorator deco3 = new ExDeco3();
@@ -178,61 +170,52 @@ namespace WEBBAKERYPro.Controllers
             {
                 if (i[0] == 0)
                 {
-                    decorator = i[0];
-                    deco1.SetComponent(banh);
-                    deco1.DatBanh(ct, ref dtb,ref decorator);
+                    deco1.SetComponent(b);
+                    deco1.DatBanh(ref ct, ref dtb,donhang,sanpham,bools,ref i);
                 }
                 if (i[0] == 1)
                 {
-                    decorator = i[1];
-                    deco2.SetComponent(banh);
-                    deco2.DatBanh(ct,ref dtb,ref decorator);
+                    deco2.SetComponent(b);
+                    deco2.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                 }
                 if (i[0] == 2)
                 {
-                    decorator = i[2];
-                    deco3.SetComponent(banh);
-                    deco3.DatBanh(ct,ref dtb, ref decorator);
+                    deco3.SetComponent(b);
+                    deco3.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                 }
             }
             else if (i.Count() == 2)
             {
                 if (i[0] == 0 && i[1] == 1)
                 {
-                    decorator = i[0];
-                    deco1.SetComponent(banh);
-                    deco1.DatBanh(ct,ref dtb, ref decorator);
-                    decorator = i[1];
+                    deco1.SetComponent(b);
+                    deco1.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                     deco2.SetComponent(deco1);
-                    deco2.DatBanh(ct,ref dtb, ref decorator);
+                    deco2.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                 }
                 else if (i[0] == 1 && i[1] == 2)
                 {
-                    decorator = i[0];
-                    deco2.SetComponent(banh);
-                    deco2.DatBanh(ct,ref dtb, ref decorator);
-                    decorator = i[1];
+                    deco2.SetComponent(b);
+                    deco2.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                     deco3.SetComponent(deco2);
-                    deco3.DatBanh(ct,ref dtb, ref decorator);
+                    deco3.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                 }
                 else
                 {
-                    decorator = i[0];
-                    deco1.SetComponent(banh);
-                    deco1.DatBanh(ct,ref dtb, ref decorator);
-                    decorator = i[1];
+                    deco1.SetComponent(b);
+                    deco1.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                     deco3.SetComponent(deco1);
-                    deco3.DatBanh(ct,ref dtb, ref decorator);
+                    deco3.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                 }
             }
             else
             {
-                deco1.SetComponent(banh);
-                deco1.DatBanh(ct,ref dtb, ref decorator);
+                deco1.SetComponent(b);
+                deco1.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                 deco2.SetComponent(deco1);
-                deco2.DatBanh(ct, ref dtb, ref decorator);
+                deco2.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
                 deco3.SetComponent(deco2);
-                deco3.DatBanh(ct, ref dtb, ref decorator);
+                deco3.DatBanh(ref ct, ref dtb, donhang, sanpham, bools, ref i);
             }
         }
     }

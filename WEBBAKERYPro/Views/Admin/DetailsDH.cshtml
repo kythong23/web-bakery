@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WEBBAKERYPro.Models.CHITIETDONHANG>
+@using WEBBAKERYPro.Models;
+
+@{
+    ViewBag.Title = "DetailsDH";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@{
+    bakeryEntities dtb = new bakeryEntities();
+}
+<style>
+    table th {
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+    }
+    table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid;
+        border-radius: 10px;
+    }
+    table {
+        border-radius: 10px;
+    }
+    .customtable {
+        margin: 50px;
+        width: 93%;
+        border-spacing:0;
+    }
+</style>
+<h2>CHI TIẾT ĐƠN HÀNG </h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="chitietsanpham">
+            <table class="customtable">
+                <tr>
+                    <th>Ảnh sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Các sản phẩm đi kèm</th>
+                </tr>
+                @foreach (var chitiet in Model)
+                {
+                    var sanpham = dtb.SANPHAMs.FirstOrDefault(id => id.MaSP == chitiet.MaSP);
+                    <tr>
+                        <td>
+                            <img class="card-img-top book-picture" style="height:100px;border-radius:10px;" src="~/Images/@sanpham.HinhSP" alt="Cardimage">
+                        </td>
+                        <td>
+                            @chitiet.ThanhTien
+                        </td>
+                        <td>
+                            @chitiet.SoLuong
+                        </td>
+                        @if (chitiet.MASPK == 0)
+                        {
+                            <td>
+                                Không có sản phẩm đi kèm
+                            </td>
+                        }
+                        else
+                        {
+                            var sanphamkem = dtb.SANPHAMDIKEMs.Where(model => model.MACTDH == chitiet.MACTDH).ToList();
+                            <td style="text-align: start;">
+                                @foreach (var item in sanphamkem)
+                                {
+                                    var tensanphamkem = dtb.CHITIETDIKEMs.FirstOrDefault(model => model.MACTSPK == item.MaCTSPK);
+                                    @tensanphamkem.TenSPK
+                                    <br>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

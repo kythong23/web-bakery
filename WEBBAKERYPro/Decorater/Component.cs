@@ -6,8 +6,8 @@ using WEBBAKERYPro.Models;
 
 namespace WEBBAKERYPro.Decorater
 {
-    abstract class Component
+    public abstract class Component
     {
-       public abstract void DatBanh(CHITIETDONHANG ct,ref bakeryEntities dtb,ref int a);
+       public abstract void DatBanh(ref CHITIETDONHANG ct, ref bakeryEntities dtb, DONHANG donhang, MatHangMua sanpham, bool[] bools, ref List<int> arr);
     }
 }

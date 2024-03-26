@@ -1416,6 +1416,7 @@
     <Content Include="Views\Admin\EditDH.cshtml" />
     <Content Include="Views\Admin\QuanLyKH.cshtml" />
     <Content Include="Views\Admin\DeleteDH.cshtml" />
+    <Content Include="Views\Admin\DetailsDH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
