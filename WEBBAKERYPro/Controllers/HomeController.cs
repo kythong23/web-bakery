@@ -9,6 +9,7 @@ using WEBBAKERYPro.Models;
 using PagedList;
 using System.Web.UI;
 using System.ComponentModel;
+using System.Security.Policy;
 
 namespace WEBBAKERYPro.Controllers
 {
@@ -83,16 +84,16 @@ namespace WEBBAKERYPro.Controllers
             var Sp = database.SANPHAMs.FirstOrDefault(s => s.MaSP == id);
             return View(Sp);
         }
-        //Gộp vào chung với index để có thể phân trang cho sản phẩm theo cate
-     /*   public ActionResult SPTheoLoai(string id, int? page)
+        public ActionResult MyOrders()
         {
-            int pageSize = 4;
-            int pageNum = (page ?? 1);
-            var dsSP = LaySanPham(16);
-            var dsSanPham = database.SANPHAMs.ToList();
-            var dsSPTheoLoai = database.SANPHAMs.Where(a => a.MaLoai == id ).ToList();
-            return View("Index",dsSPTheoLoai.ToPagedList(pageNum,pageSize));
-        }*/
+            string email;
+            string passWord;
+            email = Session["Email"] as string;
+            passWord = Session["MatKhau"] as string;
+            var kh = database.KHACHHANGs.FirstOrDefault(k => k.Email == email && k.MatKhau ==passWord);
+            var myOrders = database.DONHANGs.Where(dh => dh.MaKH == kh.MaKH).ToList();
+            return View(myOrders);
+        }
         public ActionResult Logout(int? page)
         {
             int pageSize = 6; // số lượng sản phẩm trong 1 trang

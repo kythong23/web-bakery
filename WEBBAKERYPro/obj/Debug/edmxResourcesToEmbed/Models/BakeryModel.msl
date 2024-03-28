@@ -11,11 +11,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETDIKEMs">
+      <EntityTypeMapping TypeName="bakeryModel.CHITIETDIKEM">
+        <MappingFragment StoreEntitySet="CHITIETDIKEM">
+          <ScalarProperty Name="MACTSPK" ColumnName="MACTSPK" />
+          <ScalarProperty Name="TenSPK" ColumnName="TenSPK" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CHITIETDONHANGs">
       <EntityTypeMapping TypeName="bakeryModel.CHITIETDONHANG">
         <MappingFragment StoreEntitySet="CHITIETDONHANG">
+          <ScalarProperty Name="MACTDH" ColumnName="MACTDH" />
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MASPK" ColumnName="MASPK" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
         </MappingFragment>
@@ -76,6 +87,15 @@
           <ScalarProperty Name="RateSP" ColumnName="RateSP" />
           <ScalarProperty Name="ReviewSP" ColumnName="ReviewSP" />
           <ScalarProperty Name="MotaSP" ColumnName="MotaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SANPHAMDIKEMs">
+      <EntityTypeMapping TypeName="bakeryModel.SANPHAMDIKEM">
+        <MappingFragment StoreEntitySet="SANPHAMDIKEM">
+          <ScalarProperty Name="MASPK" ColumnName="MASPK" />
+          <ScalarProperty Name="MaCTSPK" ColumnName="MaCTSPK" />
+          <ScalarProperty Name="MACTDH" ColumnName="MACTDH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

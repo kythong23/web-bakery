@@ -14,12 +14,22 @@ namespace WEBBAKERYPro.Models
     
     public partial class CHITIETDONHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CHITIETDONHANG()
+        {
+            this.SANPHAMDIKEMs = new HashSet<SANPHAMDIKEM>();
+        }
+    
+        public int MACTDH { get; set; }
         public int MaDH { get; set; }
         public string MaSP { get; set; }
+        public Nullable<int> MASPK { get; set; }
         public int SoLuong { get; set; }
         public int ThanhTien { get; set; }
     
         public virtual DONHANG DONHANG { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SANPHAMDIKEM> SANPHAMDIKEMs { get; set; }
     }
 }

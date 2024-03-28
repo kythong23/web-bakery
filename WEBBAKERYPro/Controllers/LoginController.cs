@@ -42,6 +42,8 @@ namespace WEBBAKERYPro.Controllers
                     {
                         Session["TaiKhoan"] = khach;
                         Session["TenKH"] = khach.HoTen;
+                        Session["Email"] = khach.Email;
+                        Session["MatKhau"] = khach.MatKhau;
                     }
                     else
                     {

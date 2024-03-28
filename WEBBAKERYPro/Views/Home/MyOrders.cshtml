@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WEBBAKERYPro.Models.DONHANG>
+@{
+    ViewBag.Title = "MyOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2><a href="~/Admin" style="color:black;margin-top:10px;text-decoration:none;">Đơn hàng của tôi</a></h2>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Ngày đặt
+            </th>
+            <th>
+                Giá tiền
+            </th>
+            <th>
+                Tên người nhận
+            </th>
+            <th>
+                Số điện thoại 
+            </th>
+            <th>
+                Địa chỉ nhận hàng
+            </th>
+            <th>
+                Phương thức thanh toán
+            </th>
+            <th>
+                Tình trạng đơn hàng
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TongGia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenNN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChiNhanHang)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HINHTHUCGIAOHANG.TenHT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TINHTRANGDONHANG.LoaiTT)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

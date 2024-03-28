@@ -163,6 +163,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BakeryModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CHITIETDIKEM.cs">
+      <DependentUpon>BakeryModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CHITIETDONHANG.cs">
       <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
@@ -180,6 +183,9 @@
     </Compile>
     <Compile Include="Models\MatHangMua.cs" />
     <Compile Include="Models\SANPHAM.cs">
+      <DependentUpon>BakeryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SANPHAMDIKEM.cs">
       <DependentUpon>BakeryModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TINHTRANGDONHANG.cs">
@@ -1404,6 +1410,7 @@
     <Content Include="Views\Admin\EditDH.cshtml" />
     <Content Include="Views\Admin\QuanLyKH.cshtml" />
     <Content Include="Views\Admin\DeleteDH.cshtml" />
+    <Content Include="Views\Home\MyOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

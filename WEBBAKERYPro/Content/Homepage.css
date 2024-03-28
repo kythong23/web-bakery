@@ -38,13 +38,12 @@
 .row {
     display: flex;
     flex-wrap: nowrap;
-    overflow: auto;
     justify-content:center;
 }
 .menunavbar {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 50;
     background: white;
     padding: 10px 0px 0px 10px;
     box-shadow: 0 3px 5px 0 hsla(0,0%,52.5%,.2) !important;
@@ -96,4 +95,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.nav-link {
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.container-fluid {
+    min-height: 538px;
 }
