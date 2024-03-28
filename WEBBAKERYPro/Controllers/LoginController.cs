@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using WEBBAKERYPro.Models;
 using System.Web.Mvc;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WEBBAKERYPro.Controllers
 {
@@ -37,7 +39,8 @@ namespace WEBBAKERYPro.Controllers
                     {
                         return RedirectToAction("Admin","Admin");
                     }
-                    var khach = database.KHACHHANGs.FirstOrDefault(k => k.Email == kh.Email && k.MatKhau == kh.MatKhau);
+                    string mk = HashPassword(kh.MatKhau);
+                    var khach = database.KHACHHANGs.FirstOrDefault(k => k.Email == kh.Email && k.MatKhau == mk);
                     if (khach != null)
                     {
                         Session["TaiKhoan"] = khach;
@@ -84,6 +87,7 @@ namespace WEBBAKERYPro.Controllers
 
                 if (ModelState.IsValid)
                 {
+                    kh.MatKhau = HashPassword(kh.MatKhau);
                     database.KHACHHANGs.Add(kh);
                     database.SaveChanges();
                 }
@@ -93,6 +97,25 @@ namespace WEBBAKERYPro.Controllers
                 }
             }
             return RedirectToAction("Login");
+        }
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                // Chuyển đổi mật khẩu thành mảng byte
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+
+                // Băm mật khẩu thành mảng byte
+                byte[] hash = sha256.ComputeHash(bytes);
+
+                // Chuyển đổi mảng byte thành chuỗi hex
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hash.Length; i++)
+                {
+                    builder.Append(hash[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
 
     }
