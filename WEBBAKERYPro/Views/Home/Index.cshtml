@@ -13,18 +13,22 @@
         margin: 5px;
         border-radius: 3px;
     }
-    .MenuTrang li:hover{
-        background:#3498db;
-        color:white;
-    }
-        .active {
+
+        .MenuTrang li:hover {
             background: #3498db;
             color: white;
         }
-    .MenuTrang li a{
-        text-decoration:none;
-        color:black;
+
+    .active {
+        background: #3498db;
+        color: white;
     }
+
+    .MenuTrang li a {
+        text-decoration: none;
+        color: black;
+    }
+
         .MenuTrang li a:hover {
             background: #3498db;
             color: white;
@@ -34,17 +38,19 @@
         display: flex;
         justify-content: center;
     }
+
     .slick-prev:before {
         content: '←';
         background: black;
         position: absolute;
-        right:20px;
+        right: 20px;
     }
+
     .slick-next:before {
         content: '→';
         background: black;
-        position:absolute;
-        left:-30px;
+        position: absolute;
+        left: -30px;
     }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
@@ -53,6 +59,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
       integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+@if (Session["NewProductNotification"] != null && Session["TaiKhoan"] != null)
+{
+    <div class="alert alert-success">
+        @Session["NewProductNotification"]
+    </div>
+}
 <div class="LoaiSP">
     @Html.Action("LayLoaiSanPham", "Home")
 </div>

@@ -134,6 +134,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Database.cs" />
+    <Compile Include="Controllers\ObserverPattern\IObserver.cs" />
+    <Compile Include="Controllers\ObserverPattern\ISubject.cs" />
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bakery.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bakery.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bakery.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bakery.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bakery.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETDONHANG.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONHANG.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HINHTHUCGIAOHANG.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAISANPHAM.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SANPHAM.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TINHTRANGDONHANG.cs">
+      <DependentUpon>Bakery.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ProxyPattern\ProxyAdminController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -145,47 +188,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Admin.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BakeryModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BakeryModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BakeryModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BakeryModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BakeryModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CHITIETDONHANG.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DONHANG.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HINHTHUCGIAOHANG.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\KHACHHANG.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LOAISANPHAM.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\ProxyPattern\IAdmin.cs" />
     <Compile Include="Models\MatHangMua.cs" />
-    <Compile Include="Models\SANPHAM.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TINHTRANGDONHANG.cs">
-      <DependentUpon>BakeryModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\ObserverPattern\Subject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\extra-libs\calendar\calendar.css" />
@@ -1021,15 +1027,15 @@
     <Content Include="Images\product7.jpg" />
     <Content Include="Images\product8.jpg" />
     <Content Include="Images\product9.jpg" />
-    <Content Include="Models\BakeryModel.Context.tt">
+    <Content Include="Models\Bakery.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BakeryModel.edmx</DependentUpon>
-      <LastGenOutput>BakeryModel.Context.cs</LastGenOutput>
+      <DependentUpon>Bakery.edmx</DependentUpon>
+      <LastGenOutput>Bakery.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\BakeryModel.tt">
+    <Content Include="Models\Bakery.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BakeryModel.edmx</DependentUpon>
-      <LastGenOutput>BakeryModel.cs</LastGenOutput>
+      <DependentUpon>Bakery.edmx</DependentUpon>
+      <LastGenOutput>Bakery.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -1241,12 +1247,12 @@
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.min.scss" />
     <Content Include="dist\css\icons\weather-icons\sass\weather-icons.scss" />
     <Content Include="dist\css\materialdesignicons.min.css.map" />
-    <EntityDeploy Include="Models\BakeryModel.edmx">
+    <EntityDeploy Include="Models\Bakery.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BakeryModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Bakery.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BakeryModel.edmx.diagram">
-      <DependentUpon>BakeryModel.edmx</DependentUpon>
+    <Content Include="Models\Bakery.edmx.diagram">
+      <DependentUpon>Bakery.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

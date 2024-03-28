@@ -12,7 +12,7 @@ namespace WEBBAKERYPro.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KHACHHANG
+    public partial class KHACHHANG : IObserver
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
@@ -26,8 +26,14 @@ namespace WEBBAKERYPro.Models
         public string SDT { get; set; }
         public string DiaChi { get; set; }
         public string MatKhau { get; set; }
+        public string Notification { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONHANG> DONHANGs { get; set; }
+
+        public void Update(string notification, ref KHACHHANG kh)
+        {
+            kh.Notification = notification;
+        }
     }
 }

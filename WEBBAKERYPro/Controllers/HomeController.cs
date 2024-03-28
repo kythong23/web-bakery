@@ -18,7 +18,7 @@ namespace WEBBAKERYPro.Controllers
         {
             return PartialView();
         }
-        bakeryEntities database = new bakeryEntities();
+        bakeryEntities database = Database.getDatabase();
         private List<SANPHAM> LaySanPham(int soluong)
         {
             return database.SANPHAMs.Take(soluong).ToList();
@@ -35,6 +35,7 @@ namespace WEBBAKERYPro.Controllers
                 var dsSPTheoLoai = database.SANPHAMs.Where(a => a.MaLoai == id).ToList();
                 return View("Index", dsSPTheoLoai.ToPagedList(pageNum, pageSize));
             }
+            
             return View(dsSP.ToPagedList(pageNum, pageSize));
         }
         [HttpPost]

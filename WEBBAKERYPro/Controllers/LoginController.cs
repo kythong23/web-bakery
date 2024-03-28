@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using WEBBAKERYPro.Models;
 using System.Web.Mvc;
+using System.Security.Policy;
 
 namespace WEBBAKERYPro.Controllers
 {
@@ -25,6 +26,7 @@ namespace WEBBAKERYPro.Controllers
         [HttpPost]
         public ActionResult Login(KHACHHANG kh)
         {
+            string thongBao = "";
             if (ModelState.IsValid)
             {
                 if (string.IsNullOrEmpty(kh.Email))
@@ -42,6 +44,8 @@ namespace WEBBAKERYPro.Controllers
                     {
                         Session["TaiKhoan"] = khach;
                         Session["TenKH"] = khach.HoTen;
+                        thongBao = khach.Notification;
+                        
                     }
                     else
                     {
@@ -50,6 +54,7 @@ namespace WEBBAKERYPro.Controllers
                     }
                 }
             }
+            Session["NewProductNotification"] = thongBao;
             return RedirectToAction("Index", "Home");
 
         }
