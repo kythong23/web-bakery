@@ -8,11 +8,11 @@
 
 <table class="table">
     <thead>
-        <tr>
-            <th>Sản phẩm</th>
-            <th>Đơn giá</th>
-            <th>Số lượng</th>
-            <th>Thành tiền</th>
+        <tr style="background-color: #f2f2f2; color: #333; font-size: 18px;">
+            <th style="padding: 20px 20px 20px 40px; text-align: left; border-bottom: 2px solid #ddd; font-weight: bold">Sản phẩm</th>
+            <th style="padding: 20px 20px 20px 20px; text-align: left; border-bottom: 2px solid #ddd; font-weight: bold ">Đơn giá</th>
+            <th style="padding: 20px; text-align: left; border-bottom: 2px solid #ddd; font-weight: bold ">Số lượng</th>
+            <th style="padding: 20px; text-align: left; border-bottom: 2px solid #ddd; font-weight: bold ">Thành tiền</th>
         </tr>
     </thead>
     <tbody>
@@ -24,52 +24,95 @@
                         <tr>
                             <td>
                                 <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})">
-                                    <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
+                                    <img src="~/Images/@sanpham.AnhBanh" width="70px" style="border-radius: 50%; max-width: 100%; height: auto;" />
                                 </a>
                             </td>
                             <td>
-                                <h6>@sanpham.TenBanh</h6>
-                                <div>@sanpham.MaBanh</div>
+                                <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})">
+                                    <h4 style="font-size: 17px; margin-bottom: 5px; color:black">@sanpham.TenBanh</h4>
+                                    <div style="font-size: 17px; color: black ">@sanpham.MaBanh</div>
+                                </a>
                             </td>
+
                         </tr>
                     </table>
                 </td>
                 @using (Html.BeginForm("CapNhatMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }))
                 {
-                    <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
-                    <td>
-                        @sanpham.SoLuong
-                    </td>
-                    <td>@sanpham.ThanhTien()</td>
+                    <td style="color: #da1a32; font-weight: bold; font-size: 17px; padding-top: 50px;; padding-left: 25px ">@sanpham.GiaBanh</td>
+                    <td style="font-size: 17px; padding-top: 50px; padding-left: 53px ">@sanpham.SoLuong</td>
+                    <td style="font-size: 17px; padding-top: 50px; padding-left: 40px ">@sanpham.ThanhTien()</td>
                 }
             </tr>
         }
-        <tr>
-            <td style="font-weight:bold;color:black;font-size:24px;">Tổng số lượng: @ViewBag.TongSL</td>
-            <td style="font-weight:bold;color:black;font-size:24px;">Tổng tiền: @ViewBag.TongTien</td>
-        </tr>
     </tbody>
 </table>
-<h2 style="margin-left:8px;">THÔNG TIN KHÁCH HÀNG</h2>
+
+<h2 style="margin-left: 33px; font-size: 25px; ">THÔNG TIN KHÁCH HÀNG</h2>
 <table class="table table-bordered">
     <tr>
-        <td>Họ tên: </td>
-        <td>@khach.HoTen</td>
+        <td style="font-size: 20px; padding-left: 33px; width: 10%;"><b>Họ tên: </b> @khach.HoTen</td>
     </tr>
     <tr>
-        <td>Địa chỉ: </td>
-        <td>@khach.DiaChi</td>
+        <td style="font-size: 20px; padding-left: 33px;"><b>Địa chỉ:</b>  @khach.DiaChi</td>
     </tr>
     <tr>
-        <td>Điện thoại: </td>
-        <td>@khach.SDT</td>
+        <td style="font-size: 20px; padding-left: 33px;"><b>Điện thoại:</b> @khach.SDT</td>
     </tr>
     <tr>
-        <td>Ngày đặt: </td>
-        <td>@DateTime.Now.ToShortDateString()</td>
+        <td style="font-size: 20px; padding-left: 33px;"><b>Ngày đặt:</b> @DateTime.Now.ToShortDateString()</td>
     </tr>
     <tr>
-        <td>@Html.ActionLink("Đồng ý đặt hàng", "DongYDatHang", "ShoppingCart", new { @class = "btn btn-primary" })</td>
-        <td>@Html.ActionLink("Quay lại giỏ hàng", "Index", "ShoppingCart", new { @class = "btn btn-dark" })</td>
+        <td style="font-weight: bold; color: #333; font-size: 25px; padding-left: 30px">Tổng số lượng: @ViewBag.TongSL</td>
+        <td style="font-weight: bold; color: #333; font-size: 25px;">Tổng tiền: @ViewBag.TongTien</td>
+    </tr>
+    <tr>
+
+        <td>
+            <h2 style="margin-left: 16px; font-size: 25px;">Chọn Phương Thức Thanh Toán</h2>
+            <form style="margin-left: 12px; margin-top: 12px " action="/ShoppingCart/DongYDatHang" method="post">
+                <select id="paymentMethod" name="paymentMethod" onchange="showCreditCardInput()" style="width: 370px; padding: 14px; border-radius: 5px; border: 1px solid #ccc; font-size:17px">
+                    <option value="COD">COD (Thanh toán khi nhận hàng)</option>
+                    <option value="CreditCard">CreditCard (Chuyển khoản thẻ tín dụng)</option>
+                    <!-- Thêm các phương thức thanh toán khác (nếu cần) -->
+                </select>
+                <div id="creditCardDisplay" style="display: none; margin-top: 10px;">
+                    <label for="creditCardNumber">Số thẻ tín dụng:</label>
+                    <div id="creditCardNumber">0123 4567 8912 3456</div>
+                    <div id="creditCardNumber">Lưu ý: Bạn phải chuyển khoản trước khi ấn Đặt hàng, đơn hàng sau khi được kiểm tra lại tình trạng thanh toán sẽ được tiến hành giao hàng</div>
+                </div>
+                <button id="confirmPaymentButton" style="margin-top: 10px; padding: 10px 35px; background-color: #da1a32; color: #fff; border: none; border-radius: 5px; cursor: pointer; display: none;" type="button">Xác nhận thanh toán</button>
+                <button style="margin-top: 10px; margin-left: 0px; padding: 10px 70px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;" id="datHangButton" type="submit">Đặt Hàng</button>
+
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.ActionLink("Quay lại giỏ hàng", "Index", "ShoppingCart", null, new { @class = "btn btn-dark", style = "margin-top: 8px; margin-left: 13px; padding: 10px 45px; background-color: #da1a32; color: #fff; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;" })
+        </td>
     </tr>
 </table>
+<script>
+    function showCreditCardInput() {
+        var paymentMethod = document.getElementById("paymentMethod").value;
+        var creditCardDisplay = document.getElementById("creditCardDisplay");
+        var confirmPaymentButton = document.getElementById("confirmPaymentButton");
+        var datHangButton = document.getElementById("datHangButton");
+
+        if (paymentMethod === "CreditCard") {
+            creditCardDisplay.style.display = "block";
+            confirmPaymentButton.style.display = "block";
+            datHangButton.disabled = true;
+        } else {
+            creditCardDisplay.style.display = "none";
+            confirmPaymentButton.style.display = "none";
+            datHangButton.disabled = false;
+        }
+    }
+
+    document.getElementById("confirmPaymentButton").addEventListener("click", function () {
+        document.getElementById("datHangButton").disabled = false;
+    });
+</script>

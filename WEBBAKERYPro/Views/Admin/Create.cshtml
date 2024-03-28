@@ -7,15 +7,13 @@
     Admin admin = Session["Admin"] as Admin;
 }
 
-<h2>Create</h2>
+<h2 style="margin-top:20px;margin-left:20px">Thêm sản phẩm mới</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal" style="padding:25px;">
-        <h4>SANPHAM</h4>
-        <hr />
         <div class="form-group">
             @Html.LabelFor(model => model.MaSP, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -108,13 +106,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Thêm" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div style="margin-left:15px;">
-    @Html.ActionLink("Back to List", "QuanLySP",null,new {@class = "btn btn-secondary" })
+    @Html.ActionLink("Quay về", "QuanLySP",null,new {@class = "btn btn-secondary" })
 </div>
 

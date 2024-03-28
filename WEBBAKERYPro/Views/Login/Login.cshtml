@@ -10,6 +10,7 @@
         left: 0;
         z-index: 999;
     }
+
         .backgroundlogin div {
             transition: 0.5s;
         }
@@ -81,34 +82,31 @@
                     @using (Html.BeginForm("Login", "Login"))
                     {
                         @Html.ValidationSummary(true)
-                        <h2>Xin chào!</h2>
-                        <div>Tên đăng nhập</div>
-                        <div class="username ">
+                        <h2 style="text-align: center;">ĐĂNG NHẬP</h2>
+                        <b><div style="text-align: center; margin-bottom: 10px; font-size: 17px">Tên đăng nhập</div></b>
+                        <div style="text-align: center; margin-bottom: 10px;" class="username">
                             @Html.TextBox("Email", null, new { @id = "username", required = "required" })
                         </div>
-                        <div>Mật khẩu</div>
-                        <div class="password">
+                        <b> <div style="text-align: center; margin-bottom: 10px; font-size: 17px ">Mật khẩu</div></b>
+                        <div style="text-align: center; margin-bottom: 10px;" class="password">
                             @Html.Password("MatKhau", null, new { @id = "password", required = "required" })
                         </div>
-                        <p style="margin-top:10px;">
+                        <p style="text-align: center; margin-top: 20px;">
                             <span>
-
-                            <button style="background: #468fce; color: white; font-weight: bold;height:30px;border-radius:8px;width:100px;" type="submit">Đăng nhập</button>
+                                <button style="background: #511f00; color: white; font-weight: bold; height: 40px; border-radius: 8px; width: 190px;" type="submit">Đăng nhập</button>                     
                             </span>
-                            @*<span>
-
-                            <button id="btnsignup" onclick="signup()">Đăng ký</button>
-                            </span>*@
+                            <span>
+                                <p style="margin-top: 90px; margin-left: 45px;">Chưa có tài khoản?</p>
+                                <button style="background: #511f00; margin-top: 200px; margin-right: 42px; color: white; font-weight: bold; height: 40px; border-radius: 8px; width: 190px; " id="btnsignup" onclick="signup()">Đăng ký</button>
+                            </span>
                         </p>
-
                     }
-                    <button id="btnsignup" onclick="signup()">Đăng ký</button>
                 </div>
                 <div class="col-1">
                     <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>
                 </div>
             </div>
         </div>
-        @Html.Action("Register","Login")
+        @Html.Action("Register", "Login")
     </div>
 </div>

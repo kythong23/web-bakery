@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6f28af642ad74067a571c6143b1c82c2" Name="Diagram1">
-        <EntityTypeShape EntityType="bakeryModel.Admin" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bakeryModel.Admin" Width="1.5" PointX="4.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.CHITIETDONHANG" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.DONHANG" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="bakeryModel.HINHTHUCGIAOHANG" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="bakeryModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bakeryModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="bakeryModel.SANPHAM" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bakeryModel.TINHTRANGDONHANG" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="bakeryModel.KHACHHANG" Width="1.5" PointX="3.375" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bakeryModel.LOAISANPHAM" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bakeryModel.SANPHAM" Width="1.5" PointX="7.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bakeryModel.TINHTRANGDONHANG" Width="1.5" PointX="0.625" PointY="5.125" IsExpanded="true" />
         <AssociationConnector Association="bakeryModel.FK__CHITIETDON__MaDH__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="bakeryModel.FK__CHITIETDON__MaSP__35BCFE0A" ManuallyRouted="false" />
         <AssociationConnector Association="bakeryModel.FK__DONHANG__MaHT__31EC6D26" ManuallyRouted="false" />

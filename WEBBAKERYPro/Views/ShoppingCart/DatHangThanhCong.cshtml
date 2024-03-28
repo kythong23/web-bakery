@@ -4,8 +4,11 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<div style="text-align:center;">
-    <h2>Cảm ơn bạn đã đặt hàng, đơn hàng của bạn đã được ghi nhận. Chúng tôi sẽ phản hồi trong thời gian sớm nhất</h2>
-    <div>@Html.ActionLink("Về trang chủ", "Index", "Home", null, new { @class = "btn btn-success" })</div>
+<div style="text-align: center; margin-top: 50px;">
+    <img src="https://cdn-icons-png.freepik.com/512/5610/5610944.png" alt="Thank You Image" style="max-width: 120px; margin-bottom: 20px;" />
+    <h2 style="color: #333; font-size: 24px; margin-bottom: 20px;">Cảm ơn bạn đã đặt hàng, đơn hàng của bạn đã được ghi nhận. Chúng tôi sẽ phản hồi trong thời gian sớm nhất</h2>
+    <div>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-success" style="text-decoration: none; padding: 10px 20px; border-radius: 5px; color: #fff; font-size: 20px">Về trang chủ</a>
+    </div>
 </div>
 

@@ -17,7 +17,7 @@
         @using (Html.BeginForm("Index", "Home", FormMethod.Post))
         {
             @Html.TextBox("SearchString", "", new { @class = "customsearch" });
-            <input type="submit" class="customsearch" value="Search" name="Search" style="width:100px;" />
+            <input type="submit" class="customsearch" value="Tìm" name="Search" style="width:100px;" />
         }
     </div>
     <div class="col-sm-6">
@@ -41,7 +41,7 @@
                     {
                         <div style="margin-left:10px;">
                             <span onclick="Login()">
-                                Đăng nhập
+                                ĐĂNG NHẬP
                             </span>
                         </div>
                     }
@@ -53,7 +53,7 @@
                             </span>
                             <br />
                             <div>
-                                <a href="@Url.Action("Logout","Home")">Đăng xuất</a>
+                                <a href="@Url.Action("Logout","Home")">ĐĂNG XUẤT</a>
 
                             </div>
                         </div>

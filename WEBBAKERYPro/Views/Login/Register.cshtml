@@ -24,6 +24,7 @@
     .col-6 input[type="text"], .col-7 input[type="password"] {
         margin-top: 3px;
     }
+
     #btnback {
         background: #468fce;
         color: white;
@@ -52,41 +53,34 @@
             @using (Html.BeginForm("Register", "Login"))
             {
                 @Html.ValidationSummary(true)
-                <h2>Xin chào!</h2>
-                <h2>Đăng ký tài khoản</h2>
-                <div>Họ Tên</div>
-                <div class="name">
+                <h2 style="text-align: center; font-size: 20px">ĐĂNG KÝ</h2>
+                <b><div style="text-align: center; margin-bottom: 10px; font-size: 12px">Họ Tên</div></b>
+                <div style="text-align: center; margin-bottom: 10px;" class="name">
                     @Html.TextBox("HoTen", null, new { @id = "hoten", required = "required" })
                 </div>
-                <div>Tên đăng nhập</div>
-                <div class="username">
+                <b><div style="text-align: center; margin-bottom: 10px; font-size: 12px ">Tên đăng nhập</div></b>
+                <div style="text-align: center; margin-bottom: 10px;" class="username">
                     @Html.TextBox("Email", null, new { @id = "username", required = "required" })
-
                 </div>
-                <div>Số điện thoại</div>
-                <div class="username">
+                <b><div style="text-align: center; margin-bottom: 10px; font-size: 12px ">Số điện thoại</div></b>
+                <div style="text-align: center; margin-bottom: 10px;" class="username">
                     @Html.TextBox("SDT", null, new { @id = "sdt", required = "required" })
-
                 </div>
-                <div>Địa chỉ</div>
-                <div class="username">
+                <b><div style="text-align: center; margin-bottom: 10px; font-size: 12px ">Địa chỉ</div></b>
+                <div style="text-align: center; margin-bottom: 10px;" class="username">
                     @Html.TextBox("DiaChi", null, new { @id = "diachi", required = "required" })
-
                 </div>
-                <div>Mật khẩu</div>
-                <div class="password">
+                <b><div style="text-align: center; margin-bottom: 10px; font-size: 12px ">Mật khẩu</div></b>
+                <div style="text-align: center; margin-bottom: 10px;" class="password">
                     @Html.Password("MatKhau", null, new { @id = "password", required = "required" })
                 </div>
                 <div>
-
                     <div>
-                        <button type="submit" style="background: #468fce; color: white; font-weight: bold;height:30px;border-radius:8px;width:100px; margin-top:10px;">Đăng ký</button>
-                    </div>
-                    <div>
+                        <button type="submit" style="margin-right: 100px; margin-bottom: 300px; background: #511f00; color: white; font-weight: bold; height: 30px; border-radius: 8px; width: 100px; ">Đăng ký</button>
                     </div>
                 </div>
             }
-            <button id="btnback" onclick="backtologin()">Quay lại đăng nhập</button>
+            <button style="background: #511f00; color: white; font-weight: bold; height: 30px; border-radius: 8px; width: 100px;" id="btnback" onclick="backtologin()">Quay lại đăng nhập</button>
         </div>
         <div class="col-1">
             <i class="fa-solid fa-rectangle-xmark fa-xl" style="padding:10px;" onclick="closeform()"></i>

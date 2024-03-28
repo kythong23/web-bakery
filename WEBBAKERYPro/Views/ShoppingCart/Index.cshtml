@@ -22,7 +22,7 @@
         border-radius: 5px;
     }
 </style>
-<hr />
+
 <h2>Thông tin giỏ hàng</h2>
 <div class="row">
     <div class="col-9">
@@ -44,12 +44,14 @@
                                 <tr>
                                     <td>
                                         <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})">
-                                            <img src="~/Images/@sanpham.AnhBanh" width="130px" height="130px" />
+                                            <img src="~/Images/@sanpham.AnhBanh" width="110px" style="border-radius: 50%;" />
                                         </a>
                                     </td>
-                                    <td>
-                                        <h6>@sanpham.TenBanh</h6>
-                                        <div>@sanpham.MaBanh</div>
+                                    <td style="padding: 15px;">
+                                        <a href="@Url.Action("Details","Home",new {id=sanpham.MaBanh})" style="text-decoration: none; color: black;">
+                                            <h6>@sanpham.TenBanh</h6>
+                                            <div>@sanpham.MaBanh</div>
+                                        </a>
                                     </td>
                                 </tr>
                             </table>
@@ -58,24 +60,26 @@
                         {
                             <td style="color: #da1a32;font-weight:bold;">@sanpham.GiaBanh</td>
                             <td>
-                                <input type="number" min="1" value="@sanpham.SoLuong" name="SoLuong" />
+                                <input type="number" min="1" value="@sanpham.SoLuong" name="SoLuong" style="border-radius: 10px; width: 60px; height: 30px;" />
                             </td>
                             <td>@sanpham.ThanhTien()</td>
                             <td>
                                 <button type="submit" class="btn btn-outline-primary">Cập nhật</button>
                             </td>
                         }
-                        <td> @Html.ActionLink("Xóa hàng", "XoaMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }, new { @class = "btn btn-danger" })</td>
+                        <td style="padding-left: 10px;"> @Html.ActionLink("Xóa hàng", "XoaMatHang", "ShoppingCart", new { MaSP = sanpham.MaBanh }, new { @class = "btn btn-danger" })</td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
-    <div class="col-3">
-        <h3 style=" background: #f8f5f0;max-width:300px;padding:8px;">Tổng kết đơn hàng</h3>
-        <div colspan="5">Tổng số lượng: @ViewBag.TongSL</div>
-        <div colspan="1">Tổng tiền: @ViewBag.TongTien</div>
-        <div>@Html.ActionLink("Đặt hàng", "DatHang", "ShoppingCart", new { @class = "btn btn-success" })</div>
+    <div class="col-3" style="background-color: #f8f5f0; padding: 20px; border-radius: 5px;">
+        <h3 style="margin-bottom: 20px;">Tổng kết đơn hàng</h3>
+        <b><div style="margin-bottom: 10px;">Tổng số lượng: @ViewBag.TongSL</div></b>
+        <b><div>Tổng tiền: @ViewBag.TongTien</div></b>
+        <div style="margin-top: 20px;">
+            @Html.ActionLink("Đặt hàng", "DatHang", "ShoppingCart", new { @class = "btn btn-success", style = "text-decoration: none; color: #fff; padding: 10px 20px; border-radius: 5px;" })
+        </div>
     </div>
 </div>
 
